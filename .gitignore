@@ -1,6 +1,7 @@
 ## .NET / C# gitignore
 
 # Build results
+[Dd]ist/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
