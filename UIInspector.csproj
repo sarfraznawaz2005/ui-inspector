@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+    <AssemblyName>UIInspector</AssemblyName>
+    <RootNamespace>UIInspector</RootNamespace>
+    <Version>1.0.0</Version>
+    <Product>UI Inspector</Product>
+    <Description>Desktop UI element inspector for AI coding agents</Description>
+    <Company>UI Inspector</Company>
+    <Copyright>Copyright 2026</Copyright>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <!-- DPI: declared in both app.manifest (for window manager) and here (for WinForms runtime) -->
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- WFAC010: DPI is intentionally declared in both app.manifest (window manager)
+         and ApplicationHighDpiMode (WinForms runtime). Suppress the advisory. -->
+    <NoWarn>$(NoWarn);WFAC010</NoWarn>
+  </PropertyGroup>
+
+  <!--
+    Publish-only properties.
+    These are intentionally NOT active during regular dotnet build / dotnet run
+    to avoid conflicts (PublishSingleFile causes singlefilehost.exe to be copied
+    to the output folder, which fails if the app is already running; PublishTrimmed
+    is unsupported with WinForms at the SDK level).
+
+    To create a distributable binary use:
+        dotnet publish -c Release -r win-x64 /p:PublishingBinary=true
+  -->
+  <PropertyGroup Condition="'$(PublishingBinary)' == 'true'">
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <!-- Trimming disabled: WinForms is not trim-compatible (NETSDK1175).
+         Remove this comment and uncomment the line below only after adding
+         trimmer root descriptors for every WinForms type used at runtime. -->
+    <!-- <PublishTrimmed>true</PublishTrimmed> -->
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logo.ico" LogicalName="logo.ico" />
+  </ItemGroup>
+</Project>
