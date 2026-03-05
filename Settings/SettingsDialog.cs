@@ -120,7 +120,7 @@ namespace UIInspector.Settings
 
             _autoClearCheck = new CheckBox
             {
-                Text     = "Auto-clear before copy",
+                Text     = "Auto-clear",
                 Checked  = currentSettings.AutoClearBeforeCopy,
                 AutoSize = true,
                 Enabled  = currentSettings.AutoCopy,

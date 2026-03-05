@@ -100,13 +100,20 @@ namespace UIInspector.Session
         }
 
         /// <summary>
-        /// Removes every element from the session, deleting all screenshot files
-        /// from disk, and resets the index counter to 1.
+        /// Removes every element from the session and resets the index counter to 1.
         /// </summary>
-        public void Clear()
+        /// <param name="deleteScreenshots">
+        /// When <c>true</c> (the default), screenshot files are deleted from disk.
+        /// Pass <c>false</c> to clear the session list while leaving files on disk
+        /// (used by auto-clear after copy, where the AI agent still needs the files).
+        /// </param>
+        public void Clear(bool deleteScreenshots = true)
         {
-            foreach (CapturedElement element in _elements)
-                DeleteScreenshot(element.ScreenshotPath);
+            if (deleteScreenshots)
+            {
+                foreach (CapturedElement element in _elements)
+                    DeleteScreenshot(element.ScreenshotPath);
+            }
 
             _elements.Clear();
             _nextIndex = 1;

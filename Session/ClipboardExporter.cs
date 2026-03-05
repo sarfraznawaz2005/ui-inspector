@@ -106,9 +106,9 @@ namespace UIInspector.Session
             sb.AppendLine();
 
             if (!string.IsNullOrEmpty(elem.Query))
-                sb.AppendLine($"User Query: See screenshot - {elem.Query}");
+                sb.AppendLine($"User Query: See screenshot `{elem.ScreenshotPath}` - {elem.Query}");
             else
-                sb.AppendLine("User Query: See screenshot");
+                sb.AppendLine($"User Query: See screenshot `{elem.ScreenshotPath}`");
 
             sb.AppendLine();
         }

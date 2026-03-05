@@ -356,24 +356,14 @@ namespace UIInspector.Tray
                 // Auto-copy to clipboard if enabled.
                 if (_settings.AutoCopy)
                 {
-                    if (_settings.AutoClearBeforeCopy)
-                    {
-                        // Remove every element except the one we just added.
-                        // We must not use Clear() here because it deletes ALL
-                        // screenshot files — including the one belonging to the
-                        // element we want to keep.
-                        var staleIndices = new List<int>();
-                        foreach (var el in _session.Elements)
-                        {
-                            if (el.Index != captured.Index)
-                                staleIndices.Add(el.Index);
-                        }
-                        foreach (int idx in staleIndices)
-                            _session.Remove(idx);
-                    }
-
                     ClipboardExporter.ExportToClipboard(_session);
                     Debug.WriteLine("[TrayApplication] Auto-copied to clipboard.");
+
+                    if (_settings.AutoClearBeforeCopy)
+                    {
+                        _session.Clear(deleteScreenshots: false);
+                        Debug.WriteLine("[TrayApplication] Auto-cleared session after copy (screenshots retained).");
+                    }
                 }
             }
             catch (Exception ex)
