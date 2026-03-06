@@ -33,6 +33,7 @@ namespace UIInspector.Tray
         /// element is listed with a management submenu.
         /// </param>
         /// <param name="onPickElement">Callback for "Pick Element".</param>
+        /// <param name="onPickSpot">Callback for "Pick Spot".</param>
         /// <param name="onCopyAll">Callback for "Copy All".</param>
         /// <param name="onClearAll">Callback for "Clear All".</param>
         /// <param name="onSettings">Callback for "Settings".</param>
@@ -51,6 +52,7 @@ namespace UIInspector.Tray
         public static ContextMenuStrip Build(
             InspectionSession? session,
             EventHandler?      onPickElement  = null,
+            EventHandler?      onPickSpot     = null,
             EventHandler?      onCopyAll      = null,
             EventHandler?      onClearAll     = null,
             EventHandler?      onSettings     = null,
@@ -83,6 +85,22 @@ namespace UIInspector.Tray
                 pickItem.Click += onPickElement;
 
             menu.Items.Add(pickItem);
+
+            // -----------------------------------------------------------------
+            // "Pick Spot    Ctrl+Shift+S"
+            // -----------------------------------------------------------------
+            var pickSpotItem = new ToolStripMenuItem("Pick Spot")
+            {
+                ShortcutKeyDisplayString = "Ctrl+Shift+S",
+                ShowShortcutKeys         = true,
+                Enabled                  = true,
+                Font                     = new Font(baseFont, FontStyle.Bold),
+            };
+
+            if (onPickSpot is not null)
+                pickSpotItem.Click += onPickSpot;
+
+            menu.Items.Add(pickSpotItem);
 
             // -----------------------------------------------------------------
             // Separator

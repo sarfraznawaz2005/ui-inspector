@@ -59,6 +59,29 @@ namespace UIInspector.Picker
             Hide();
         }
 
+        /// <summary>
+        /// Toggles whether the overlay window receives mouse input.
+        ///
+        /// Pass <c>true</c> to remove <c>WS_EX_TRANSPARENT</c> so WPF mouse events
+        /// are delivered to the canvas (used by <see cref="SpotPicker"/>).
+        /// Pass <c>false</c> to restore it so clicks pass through to windows beneath
+        /// (used by <see cref="ElementPicker"/>).
+        /// </summary>
+        public void SetInteractive(bool interactive)
+        {
+            IntPtr hwnd = new WindowInteropHelper(this).Handle;
+            if (hwnd == IntPtr.Zero) return;
+
+            long exStyle = (long)NativeMethods.GetWindowLongPtr(hwnd, NativeMethods.GWL_EXSTYLE);
+
+            if (interactive)
+                exStyle &= ~NativeMethods.WS_EX_TRANSPARENT;   // allow mouse input
+            else
+                exStyle |= NativeMethods.WS_EX_TRANSPARENT;    // pass through
+
+            NativeMethods.SetWindowLongPtr(hwnd, NativeMethods.GWL_EXSTYLE, new IntPtr(exStyle));
+        }
+
         // =====================================================================
         // Event handlers
         // =====================================================================

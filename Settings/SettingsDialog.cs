@@ -14,6 +14,7 @@ namespace UIInspector.Settings
     public sealed class SettingsDialog : Form
     {
         private readonly TextBox       _pickHotkeyBox;
+        private readonly TextBox       _spotHotkeyBox;
         private readonly TextBox       _copyHotkeyBox;
         private readonly TextBox       _folderBox;
         private readonly CheckBox      _autoCleanCheck;
@@ -89,6 +90,22 @@ namespace UIInspector.Settings
             };
             _pickHotkeyBox.KeyDown += (s, e) => OnHotkeyBoxKeyDown(_pickHotkeyBox, e);
             Controls.Add(_pickHotkeyBox);
+            y += 24 + rowGap;
+
+            // ── Spot Hotkey ──
+            Controls.Add(MakeFieldLabel("Spot Hotkey:", pad, y));
+            y += 18 + labelGap;
+            _spotHotkeyBox = new TextBox
+            {
+                ReadOnly  = true,
+                Text      = currentSettings.SpotHotkey,
+                Location  = new Point(pad, y),
+                Size      = new Size(fullW, 24),
+                BackColor = SystemColors.Window,
+                Anchor    = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right,
+            };
+            _spotHotkeyBox.KeyDown += (s, e) => OnHotkeyBoxKeyDown(_spotHotkeyBox, e);
+            Controls.Add(_spotHotkeyBox);
             y += 24 + rowGap;
 
             // ── Copy Hotkey ──
@@ -413,15 +430,23 @@ namespace UIInspector.Settings
                 _pickHotkeyBox.Focus();
                 return;
             }
+            if (string.IsNullOrWhiteSpace(_spotHotkeyBox.Text))
+            {
+                ShowError("Spot Hotkey cannot be empty.\nPress a key combination in the field.");
+                _spotHotkeyBox.Focus();
+                return;
+            }
             if (string.IsNullOrWhiteSpace(_copyHotkeyBox.Text))
             {
                 ShowError("Copy Hotkey cannot be empty.\nPress a key combination in the field.");
                 _copyHotkeyBox.Focus();
                 return;
             }
-            if (_pickHotkeyBox.Text.Equals(_copyHotkeyBox.Text, StringComparison.OrdinalIgnoreCase))
+            if (_pickHotkeyBox.Text.Equals(_spotHotkeyBox.Text, StringComparison.OrdinalIgnoreCase) ||
+                _pickHotkeyBox.Text.Equals(_copyHotkeyBox.Text, StringComparison.OrdinalIgnoreCase) ||
+                _spotHotkeyBox.Text.Equals(_copyHotkeyBox.Text, StringComparison.OrdinalIgnoreCase))
             {
-                ShowError("Pick Hotkey and Copy Hotkey must be different.");
+                ShowError("Pick Hotkey, Spot Hotkey, and Copy Hotkey must all be different.");
                 _pickHotkeyBox.Focus();
                 return;
             }
@@ -437,6 +462,7 @@ namespace UIInspector.Settings
             var settings = new AppSettings
             {
                 PickHotkey           = _pickHotkeyBox.Text.Trim(),
+                SpotHotkey           = _spotHotkeyBox.Text.Trim(),
                 CopyHotkey           = _copyHotkeyBox.Text.Trim(),
                 AutoCopy             = _autoCopyCheck.Checked,
                 AutoClearBeforeCopy  = _autoClearCheck.Checked,

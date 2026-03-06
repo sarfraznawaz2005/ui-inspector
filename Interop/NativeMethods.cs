@@ -82,6 +82,8 @@ namespace UIInspector.Interop
 
         public const int WM_HOTKEY      = 0x0312;
         public const int WM_LBUTTONDOWN = 0x0201;
+        public const int WM_LBUTTONUP   = 0x0202;
+        public const int WM_MOUSEMOVE   = 0x0200;
         public const int WM_RBUTTONDOWN = 0x0204;
         public const int WM_KEYDOWN     = 0x0100;
         public const int WM_KEYUP       = 0x0101;
@@ -104,6 +106,12 @@ namespace UIInspector.Interop
 
         public const int WH_MOUSE_LL    = 14;
         public const int WH_KEYBOARD_LL = 13;
+
+        // =====================================================================
+        // Constants — Stock cursors
+        // =====================================================================
+
+        public static readonly IntPtr IDC_CROSS = new IntPtr(32515);
 
         // =====================================================================
         // Constants — SetLayeredWindowAttributes flags
@@ -140,6 +148,19 @@ namespace UIInspector.Interop
         [DllImport("user32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool GetCursorPos(out POINT lpPoint);
+
+        /// <summary>
+        /// Sets the cursor shape. Pass a handle obtained from LoadCursor.
+        /// </summary>
+        [DllImport("user32.dll")]
+        public static extern IntPtr SetCursor(IntPtr hCursor);
+
+        /// <summary>
+        /// Loads a predefined system cursor. Pass IntPtr.Zero for hInstance and
+        /// one of the IDC_* constants for lpCursorName.
+        /// </summary>
+        [DllImport("user32.dll")]
+        public static extern IntPtr LoadCursor(IntPtr hInstance, IntPtr lpCursorName);
 
         /// <summary>
         /// Returns a handle to the window that contains the specified point.

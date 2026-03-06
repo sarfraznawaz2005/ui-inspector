@@ -23,6 +23,11 @@ namespace UIInspector.Settings
         public string CopyHotkey { get; set; } = "Ctrl+Shift+C";
 
         /// <summary>
+        /// Hot-key string that triggers spot (region-draw) picking mode.
+        /// </summary>
+        public string SpotHotkey { get; set; } = "Ctrl+Shift+S";
+
+        /// <summary>
         /// When true, element details are automatically copied to the clipboard
         /// each time an element is picked.
         /// </summary>

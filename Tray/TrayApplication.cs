@@ -33,9 +33,10 @@ namespace UIInspector.Tray
         private readonly NotifyIcon       _notifyIcon;
         private readonly AppSettings      _settings;
 
-        // Session and picker — owned by TrayApplication for the process lifetime.
+        // Session and pickers — owned by TrayApplication for the process lifetime.
         private readonly InspectionSession _session;
         private readonly ElementPicker     _picker;
+        private readonly SpotPicker        _spotPicker;
 
         // Global hotkey manager — receives WM_HOTKEY and fires HotkeyPressed.
         private readonly GlobalHotkeyManager _hotkeyManager;
@@ -75,8 +76,9 @@ namespace UIInspector.Tray
             _session = new InspectionSession();
             _session.SessionChanged += OnSessionChanged;
 
-            // Create picker (reusable across multiple pick sessions).
-            _picker = new ElementPicker();
+            // Create pickers (reusable across multiple pick sessions).
+            _picker     = new ElementPicker();
+            _spotPicker = new SpotPicker();
 
             // Run screenshot auto-cleanup on startup if the user has opted in.
             if (_settings.AutoCleanScreenshots)
@@ -98,6 +100,7 @@ namespace UIInspector.Tray
             _hotkeyManager = new GlobalHotkeyManager();
             _hotkeyManager.Register(1, _settings.PickHotkey);
             _hotkeyManager.Register(2, _settings.CopyHotkey);
+            _hotkeyManager.Register(3, _settings.SpotHotkey);
             _hotkeyManager.HotkeyPressed += OnHotkeyPressed;
 
             RefreshTooltip();
@@ -136,6 +139,7 @@ namespace UIInspector.Tray
             TrayMenuBuilder.Build(
                 session:        _session,
                 onPickElement:  OnPickElementClicked,
+                onPickSpot:     OnPickSpotClicked,
                 onCopyAll:      OnCopyAllClicked,
                 onClearAll:     OnClearAllClicked,
                 onSettings:     OnSettingsClicked,
@@ -168,6 +172,7 @@ namespace UIInspector.Tray
                 _hotkeyManager.UnregisterAll();
                 _hotkeyManager.Register(1, _settings.PickHotkey);
                 _hotkeyManager.Register(2, _settings.CopyHotkey);
+                _hotkeyManager.Register(3, _settings.SpotHotkey);
 
                 Debug.WriteLine("[TrayApplication] Settings reloaded after dialog save.");
             }
@@ -181,6 +186,7 @@ namespace UIInspector.Tray
         private static void CopySettings(AppSettings source, AppSettings destination)
         {
             destination.PickHotkey           = source.PickHotkey;
+            destination.SpotHotkey           = source.SpotHotkey;
             destination.CopyHotkey           = source.CopyHotkey;
             destination.AutoCopy             = source.AutoCopy;
             destination.AutoClearBeforeCopy  = source.AutoClearBeforeCopy;
@@ -381,6 +387,163 @@ namespace UIInspector.Tray
             }
         }
 
+        /// <summary>
+        /// Entry point for the spot-pick flow.  The user draws a rectangular
+        /// region; we capture a screenshot of that region and attempt to detect
+        /// the UI element at its centre.
+        /// </summary>
+        private async void OnPickSpotClicked(object? sender, EventArgs e)
+        {
+            if (_pickInProgress)
+            {
+                Debug.WriteLine("[TrayApplication] Pick already in progress — ignoring.");
+                return;
+            }
+
+            _pickInProgress = true;
+
+            try
+            {
+                // ----------------------------------------------------------
+                // Step 1: Enter spot-pick mode — user draws a rectangle
+                // ----------------------------------------------------------
+                SpotResult? spotResult = await _spotPicker.PickAsync(_settings);
+
+                if (spotResult == null)
+                {
+                    Debug.WriteLine("[TrayApplication] Spot pick cancelled.");
+                    return;
+                }
+
+                ElementInfo? elementInfo = spotResult.DetectedElement;
+
+                // ----------------------------------------------------------
+                // Steps 2-4: Selector / parent / siblings
+                //            (only possible when a UIA element was detected)
+                // ----------------------------------------------------------
+                string selector = string.Empty;
+                ElementInfo? parentInfo = null;
+                List<ElementInfo> siblings = new();
+
+                if (elementInfo != null)
+                {
+                    try { selector = SelectorBuilder.BuildSelector(elementInfo.RawElement); }
+                    catch (Exception ex) { Debug.WriteLine($"[TrayApplication] Spot BuildSelector failed: {ex.Message}"); }
+
+                    try { parentInfo = SelectorBuilder.GetParentInfo(elementInfo.RawElement); }
+                    catch (Exception ex) { Debug.WriteLine($"[TrayApplication] Spot GetParentInfo failed: {ex.Message}"); }
+
+                    try { siblings = SelectorBuilder.GetSiblings(elementInfo.RawElement); }
+                    catch (Exception ex) { Debug.WriteLine($"[TrayApplication] Spot GetSiblings failed: {ex.Message}"); }
+                }
+
+                // ----------------------------------------------------------
+                // Step 5: Process type
+                // ----------------------------------------------------------
+                ProcessType processType = elementInfo != null
+                    ? ProcessDetector.Detect(elementInfo.ProcessId)
+                    : ProcessType.Unknown;
+
+                // ----------------------------------------------------------
+                // Step 6: Capture screenshot of the drawn region
+                // ----------------------------------------------------------
+                string screenshotPath = string.Empty;
+                try
+                {
+                    screenshotPath = ScreenshotCapture.CaptureElement(
+                        spotResult.DrawnBounds,
+                        _settings.ScreenshotFolder,
+                        _settings.HighlightColor);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"[TrayApplication] Spot CaptureElement failed: {ex.Message}");
+                }
+
+                // ----------------------------------------------------------
+                // Step 7: Build CapturedElement
+                // ----------------------------------------------------------
+                string parentDescription = BuildElementDescription(parentInfo);
+                var siblingDescriptions  = new List<string>();
+                foreach (ElementInfo sib in siblings)
+                    siblingDescriptions.Add(BuildElementDescription(sib));
+
+                var captured = new CapturedElement
+                {
+                    ControlType         = elementInfo?.ControlType  ?? "Region",
+                    Name                = elementInfo?.Name         ?? string.Empty,
+                    AutomationId        = elementInfo?.AutomationId ?? string.Empty,
+                    ClassName           = elementInfo?.ClassName    ?? string.Empty,
+                    Selector            = selector,
+                    IsEnabled           = elementInfo?.IsEnabled    ?? false,
+                    IsOffscreen         = elementInfo?.IsOffscreen  ?? false,
+                    BoundingRectangle   = spotResult.DrawnBounds,
+                    ProcessName         = elementInfo?.ProcessName  ?? string.Empty,
+                    ProcessType         = processType,
+                    ScreenshotPath      = screenshotPath,
+                    ParentDescription   = parentDescription,
+                    SiblingDescriptions = siblingDescriptions,
+                    CapturedAt          = DateTime.UtcNow,
+                };
+
+                // ----------------------------------------------------------
+                // Step 8: Query dialog
+                // ----------------------------------------------------------
+                using var dialog = new QueryDialog(
+                    captured.ControlType,
+                    captured.Name,
+                    captured.AutomationId,
+                    existingQuery: string.Empty);
+
+                if (dialog.ShowDialog() != DialogResult.OK)
+                {
+                    if (!string.IsNullOrEmpty(screenshotPath))
+                    {
+                        try { System.IO.File.Delete(screenshotPath); }
+                        catch { /* best effort */ }
+                    }
+                    Debug.WriteLine("[TrayApplication] Spot query dialog skipped — element discarded.");
+                    return;
+                }
+
+                captured.Query = dialog.QueryText;
+
+                // ----------------------------------------------------------
+                // Step 9: Add to session
+                // ----------------------------------------------------------
+                _session.Add(captured);
+
+                Debug.WriteLine(
+                    $"[TrayApplication] Added spot [{captured.Index}] " +
+                    $"{captured.ControlType} \"{captured.Name}\"");
+
+                if (_settings.AutoCopy)
+                {
+                    ClipboardExporter.ExportToClipboard(_session);
+                    Debug.WriteLine("[TrayApplication] Auto-copied to clipboard.");
+
+                    if (_settings.AutoClearBeforeCopy)
+                    {
+                        _session.Clear(deleteScreenshots: false);
+                        Debug.WriteLine("[TrayApplication] Auto-cleared session after copy (screenshots retained).");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"[TrayApplication] Unhandled error in spot pick flow: {ex}");
+                MessageBox.Show(
+                    $"An error occurred while picking a spot:\n\n{ex.Message}",
+                    "UI Inspector — Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            finally
+            {
+                _pickInProgress = false;
+            }
+        }
+
         // =====================================================================
         // Private — element submenu callbacks
         // =====================================================================
@@ -485,6 +648,9 @@ namespace UIInspector.Tray
                     break;
                 case 2:
                     OnCopyAllClicked(null, EventArgs.Empty);
+                    break;
+                case 3:
+                    OnPickSpotClicked(null, EventArgs.Empty);
                     break;
                 default:
                     Debug.WriteLine($"[TrayApplication] Unknown hotkey id={id}");
