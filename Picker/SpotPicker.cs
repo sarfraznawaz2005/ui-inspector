@@ -203,10 +203,14 @@ namespace UIInspector.Picker
                     _dragStartPx = hs.pt;
                     _isDragging  = true;
                     UpdateSelectionRect(hs.pt, hs.pt);
+                    // Suppress: don't let the click reach the window under the cursor.
+                    return new IntPtr(1);
                 }
                 else if (msg == NativeMethods.WM_MOUSEMOVE && _isDragging)
                 {
                     UpdateSelectionRect(_dragStartPx, hs.pt);
+                    // Suppress mouse-move events while dragging to prevent hover/selection effects.
+                    return new IntPtr(1);
                 }
                 else if (msg == NativeMethods.WM_LBUTTONUP && _isDragging)
                 {
@@ -252,11 +256,15 @@ namespace UIInspector.Picker
                             });
                         });
                     }
+                    // Suppress: don't let the button-up reach the window under the cursor.
+                    return new IntPtr(1);
                 }
                 else if (msg == NativeMethods.WM_RBUTTONDOWN)
                 {
                     _isDragging = false;
                     _tcs?.TrySetResult(null);
+                    // Suppress to avoid triggering a context menu.
+                    return new IntPtr(1);
                 }
             }
 
