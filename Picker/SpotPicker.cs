@@ -118,6 +118,7 @@ namespace UIInspector.Picker
                     // captures all mouse events at the system level instead.
                 });
 
+                SetCrosshairCursor();
                 InstallHooks();
 
                 return await _tcs.Task;
@@ -195,9 +196,6 @@ namespace UIInspector.Picker
                 int msg = (int)wParam;
                 var hs  = Marshal.PtrToStructure<MSLLHOOKSTRUCT>(lParam);
 
-                // Force crosshair cursor while session is active.
-                NativeMethods.SetCursor(NativeMethods.LoadCursor(IntPtr.Zero, NativeMethods.IDC_CROSS));
-
                 if (msg == NativeMethods.WM_LBUTTONDOWN)
                 {
                     _dragStartPx = hs.pt;
@@ -209,8 +207,9 @@ namespace UIInspector.Picker
                 else if (msg == NativeMethods.WM_MOUSEMOVE && _isDragging)
                 {
                     UpdateSelectionRect(_dragStartPx, hs.pt);
-                    // Suppress mouse-move events while dragging to prevent hover/selection effects.
-                    return new IntPtr(1);
+                    // Pass mouse-move through so cursor movement feels natural.
+                    // No selection can start in the underlying window because it
+                    // never received WM_LBUTTONDOWN (suppressed above).
                 }
                 else if (msg == NativeMethods.WM_LBUTTONUP && _isDragging)
                 {
@@ -360,6 +359,8 @@ namespace UIInspector.Picker
             _sessionActive = false;
             _isDragging    = false;
 
+            RestoreSystemCursors();
+
             if (_mouseHookHandle != IntPtr.Zero)
             {
                 NativeMethods.UnhookWindowsHookEx(_mouseHookHandle);
@@ -390,6 +391,46 @@ namespace UIInspector.Picker
                 {
                     Debug.WriteLine($"[SpotPicker] CleanupSession dispatcher invoke failed: {ex.Message}");
                 }
+            }
+        }
+
+        // =====================================================================
+        // System cursor helpers
+        // =====================================================================
+
+        /// <summary>
+        /// Replaces the normal arrow and text I-beam system cursors with a
+        /// crosshair so the cursor appears as a crosshair over every window,
+        /// regardless of which process owns it.
+        /// SetSystemCursor takes ownership of the handle, so we copy first.
+        /// </summary>
+        private static void SetCrosshairCursor()
+        {
+            try
+            {
+                IntPtr hCross = NativeMethods.LoadCursor(IntPtr.Zero, NativeMethods.IDC_CROSS);
+                NativeMethods.SetSystemCursor(NativeMethods.CopyIcon(hCross), NativeMethods.OCR_NORMAL);
+                NativeMethods.SetSystemCursor(NativeMethods.CopyIcon(hCross), NativeMethods.OCR_IBEAM);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"[SpotPicker] SetCrosshairCursor failed: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Restores all system cursors to their defaults (undoes SetSystemCursor).
+        /// </summary>
+        private static void RestoreSystemCursors()
+        {
+            try
+            {
+                NativeMethods.SystemParametersInfo(
+                    NativeMethods.SPI_SETCURSORS, 0, IntPtr.Zero, 0);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"[SpotPicker] RestoreSystemCursors failed: {ex.Message}");
             }
         }
 

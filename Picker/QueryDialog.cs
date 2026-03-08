@@ -60,7 +60,7 @@ namespace UIInspector.Picker
                 Text         = headerText,
                 Font         = new Font(Font.FontFamily, 10f, FontStyle.Bold),
                 AutoSize     = false,
-                AutoEllipsis = true,
+                AutoEllipsis = false,  // allow wrapping; height is adjusted after layout
                 Location     = new Point(pad, y),
                 Size         = new Size(fullW, 24),
                 Anchor       = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right,
@@ -136,7 +136,25 @@ namespace UIInspector.Picker
 
             ResumeLayout(true);
 
-            // After ResumeLayout, all control positions reflect DPI scaling.
+            // After ResumeLayout all positions are DPI-scaled.
+            // Measure how tall the header label actually needs to be for its text
+            // to wrap fully, and push every control below it down if needed.
+            int neededHeaderH = TextRenderer.MeasureText(
+                headerLabel.Text,
+                headerLabel.Font,
+                new Size(headerLabel.Width, int.MaxValue),
+                TextFormatFlags.WordBreak | TextFormatFlags.TextBoxControl).Height + 4;
+
+            if (neededHeaderH > headerLabel.Height)
+            {
+                int delta = neededHeaderH - headerLabel.Height;
+                headerLabel.Height  = neededHeaderH;
+                subtitleLabel.Top  += delta;
+                _queryTextBox.Top  += delta;
+                _addButton.Top     += delta;
+                _skipButton.Top    += delta;
+            }
+
             // Capture the scaled gap and compute correct form height.
             _btnGap = _skipButton.Top - _queryTextBox.Bottom;
             ClientSize = new Size(ClientSize.Width, _skipButton.Bottom + _btnGap);

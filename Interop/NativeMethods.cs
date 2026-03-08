@@ -163,6 +163,37 @@ namespace UIInspector.Interop
         public static extern IntPtr LoadCursor(IntPtr hInstance, IntPtr lpCursorName);
 
         /// <summary>
+        /// Replaces the contents of a system cursor. hCursor must be a copy
+        /// (not a shared handle) — the system takes ownership.
+        /// </summary>
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool SetSystemCursor(IntPtr hCursor, uint id);
+
+        /// <summary>
+        /// Creates a duplicate of a cursor handle (needed before SetSystemCursor
+        /// because SetSystemCursor takes ownership of the handle).
+        /// </summary>
+        [DllImport("user32.dll")]
+        public static extern IntPtr CopyIcon(IntPtr hIcon);
+
+        /// <summary>
+        /// Sets system-wide parameters. Use SPI_SETCURSORS to restore all
+        /// system cursors to their defaults after a SetSystemCursor call.
+        /// </summary>
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool SystemParametersInfo(uint uiAction, uint uiParam, IntPtr pvParam, uint fWinIni);
+
+        // System cursor IDs for SetSystemCursor
+        public const uint OCR_NORMAL  = 32512;   // standard arrow
+        public const uint OCR_IBEAM   = 32513;   // text I-beam
+        public const uint OCR_CROSS   = 32515;   // crosshair
+
+        // SystemParametersInfo action to restore all cursors to scheme defaults
+        public const uint SPI_SETCURSORS = 0x0057;
+
+        /// <summary>
         /// Returns a handle to the window that contains the specified point.
         /// </summary>
         [DllImport("user32.dll")]
