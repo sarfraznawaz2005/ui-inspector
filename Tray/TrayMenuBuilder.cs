@@ -276,7 +276,12 @@ namespace UIInspector.Tray
         private static string TruncateName(string name)
         {
             if (string.IsNullOrWhiteSpace(name)) return "(unnamed)";
-            return name.Length > MaxNameLength ? name[..MaxNameLength] + "..." : name;
+
+            // Collapse any whitespace (newlines, tabs, etc.) into single spaces
+            // so the menu item never wraps to multiple lines.
+            string singleLine = System.Text.RegularExpressions.Regex.Replace(name.Trim(), @"\s+", " ");
+
+            return singleLine.Length > MaxNameLength ? singleLine[..MaxNameLength] + "..." : singleLine;
         }
 
         /// <summary>
