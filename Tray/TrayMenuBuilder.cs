@@ -151,7 +151,8 @@ namespace UIInspector.Tray
             // -----------------------------------------------------------------
             var clearAllItem = new ToolStripMenuItem("Clear All")
             {
-                Enabled = hasElements,
+                Enabled   = hasElements,
+                ForeColor = hasElements ? Color.FromArgb(200, 0, 0) : SystemColors.GrayText,
             };
 
             if (hasElements && onClearAll is not null)
