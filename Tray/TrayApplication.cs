@@ -450,14 +450,24 @@ namespace UIInspector.Tray
                 string screenshotPath = string.Empty;
                 try
                 {
-                    screenshotPath = ScreenshotCapture.CaptureElement(
-                        spotResult.DrawnBounds,
-                        _settings.ScreenshotFolder,
-                        _settings.HighlightColor);
+                    screenshotPath = spotResult.FrozenBitmap != null
+                        ? ScreenshotCapture.CropAndSave(
+                            spotResult.FrozenBitmap,
+                            spotResult.DrawnBounds,
+                            _settings.ScreenshotFolder,
+                            _settings.HighlightColor)
+                        : ScreenshotCapture.CaptureElement(
+                            spotResult.DrawnBounds,
+                            _settings.ScreenshotFolder,
+                            _settings.HighlightColor);
                 }
                 catch (Exception ex)
                 {
                     Debug.WriteLine($"[TrayApplication] Spot CaptureElement failed: {ex.Message}");
+                }
+                finally
+                {
+                    spotResult.FrozenBitmap?.Dispose();
                 }
 
                 // ----------------------------------------------------------

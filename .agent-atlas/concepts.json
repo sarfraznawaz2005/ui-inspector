@@ -100,7 +100,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 651,
+      "line": 661,
       "symbol": "OnHotkeyPressed",
       "type": "function"
     }
@@ -150,13 +150,13 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 622,
+      "line": 632,
       "symbol": "OnClearAllClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 627,
+      "line": 637,
       "symbol": "OnCopyAllClicked",
       "type": "function"
     }
@@ -176,13 +176,13 @@
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 86,
+      "line": 93,
       "symbol": "Dispose",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 746,
+      "line": 756,
       "symbol": "DisposeCurrentMenu",
       "type": "function"
     }
@@ -216,7 +216,7 @@
     },
     {
       "file": "Inspection/ScreenshotCapture.cs",
-      "line": 233,
+      "line": 313,
       "symbol": "ParseColor",
       "type": "function"
     },
@@ -260,13 +260,13 @@
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 108,
+      "line": 119,
       "symbol": "EnsureWpfDispatcher",
       "type": "function"
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 136,
+      "line": 166,
       "symbol": "EnsureWpfDispatcher",
       "type": "function"
     }
@@ -346,13 +346,13 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 685,
+      "line": 695,
       "symbol": "FindElement",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 696,
+      "line": 706,
       "symbol": "BuildElementDescription",
       "type": "function"
     },
@@ -552,7 +552,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 622,
+      "line": 632,
       "symbol": "OnClearAllClicked",
       "type": "function"
     }
@@ -573,26 +573,10 @@
       "type": "function"
     }
   ],
-  "capture": [
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 61,
-      "symbol": "CaptureElement",
-      "type": "function"
-    }
-  ],
-  "drawing": [
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 132,
-      "symbol": "DrawingRectangle",
-      "type": "function"
-    }
-  ],
   "rectangle": [
     {
       "file": "Inspection/ScreenshotCapture.cs",
-      "line": 132,
+      "line": 222,
       "symbol": "DrawingRectangle",
       "type": "function"
     },
@@ -612,7 +596,7 @@
   "cleanup": [
     {
       "file": "Inspection/ScreenshotCapture.cs",
-      "line": 159,
+      "line": 135,
       "symbol": "CleanupOldScreenshots",
       "type": "function"
     },
@@ -624,37 +608,21 @@
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 357,
+      "line": 387,
       "symbol": "CleanupSession",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 713,
+      "line": 723,
       "symbol": "RunScreenshotCleanup",
-      "type": "function"
-    }
-  ],
-  "old": [
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 159,
-      "symbol": "CleanupOldScreenshots",
-      "type": "function"
-    }
-  ],
-  "screenshots": [
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 159,
-      "symbol": "CleanupOldScreenshots",
       "type": "function"
     }
   ],
   "build": [
     {
       "file": "Inspection/ScreenshotCapture.cs",
-      "line": 199,
+      "line": 279,
       "symbol": "BuildFilename",
       "type": "function"
     },
@@ -696,7 +664,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 696,
+      "line": 706,
       "symbol": "BuildElementDescription",
       "type": "function"
     },
@@ -713,18 +681,10 @@
       "type": "function"
     }
   ],
-  "filename": [
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 199,
-      "symbol": "BuildFilename",
-      "type": "function"
-    }
-  ],
   "ensure": [
     {
       "file": "Inspection/ScreenshotCapture.cs",
-      "line": 219,
+      "line": 299,
       "symbol": "EnsureFolder",
       "type": "function"
     },
@@ -742,29 +702,21 @@
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 108,
+      "line": 119,
       "symbol": "EnsureWpfDispatcher",
       "type": "function"
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 136,
+      "line": 166,
       "symbol": "EnsureWpfDispatcher",
-      "type": "function"
-    }
-  ],
-  "folder": [
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 219,
-      "symbol": "EnsureFolder",
       "type": "function"
     }
   ],
   "color": [
     {
       "file": "Inspection/ScreenshotCapture.cs",
-      "line": 233,
+      "line": 313,
       "symbol": "ParseColor",
       "type": "function"
     },
@@ -796,160 +748,6 @@
       "file": "Settings/SettingsDialog.cs",
       "line": 516,
       "symbol": "GetContrastColor",
-      "type": "function"
-    }
-  ],
-  "system": [
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 255,
-      "symbol": "SystemInformation_VirtualScreenLeft",
-      "type": "function"
-    },
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 256,
-      "symbol": "SystemInformation_VirtualScreenTop",
-      "type": "function"
-    },
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 257,
-      "symbol": "SystemInformation_VirtualScreenWidth",
-      "type": "function"
-    },
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 258,
-      "symbol": "SystemInformation_VirtualScreenHeight",
-      "type": "function"
-    },
-    {
-      "file": "Picker/SpotPicker.cs",
-      "line": 424,
-      "symbol": "RestoreSystemCursors",
-      "type": "function"
-    }
-  ],
-  "information": [
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 255,
-      "symbol": "SystemInformation_VirtualScreenLeft",
-      "type": "function"
-    },
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 256,
-      "symbol": "SystemInformation_VirtualScreenTop",
-      "type": "function"
-    },
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 257,
-      "symbol": "SystemInformation_VirtualScreenWidth",
-      "type": "function"
-    },
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 258,
-      "symbol": "SystemInformation_VirtualScreenHeight",
-      "type": "function"
-    }
-  ],
-  "virtual": [
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 255,
-      "symbol": "SystemInformation_VirtualScreenLeft",
-      "type": "function"
-    },
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 256,
-      "symbol": "SystemInformation_VirtualScreenTop",
-      "type": "function"
-    },
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 257,
-      "symbol": "SystemInformation_VirtualScreenWidth",
-      "type": "function"
-    },
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 258,
-      "symbol": "SystemInformation_VirtualScreenHeight",
-      "type": "function"
-    },
-    {
-      "file": "Picker/OverlayWindow.xaml.cs",
-      "line": 132,
-      "symbol": "ApplyVirtualScreenBounds",
-      "type": "function"
-    }
-  ],
-  "screen": [
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 255,
-      "symbol": "SystemInformation_VirtualScreenLeft",
-      "type": "function"
-    },
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 256,
-      "symbol": "SystemInformation_VirtualScreenTop",
-      "type": "function"
-    },
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 257,
-      "symbol": "SystemInformation_VirtualScreenWidth",
-      "type": "function"
-    },
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 258,
-      "symbol": "SystemInformation_VirtualScreenHeight",
-      "type": "function"
-    },
-    {
-      "file": "Picker/OverlayWindow.xaml.cs",
-      "line": 132,
-      "symbol": "ApplyVirtualScreenBounds",
-      "type": "function"
-    }
-  ],
-  "left": [
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 255,
-      "symbol": "SystemInformation_VirtualScreenLeft",
-      "type": "function"
-    }
-  ],
-  "top": [
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 256,
-      "symbol": "SystemInformation_VirtualScreenTop",
-      "type": "function"
-    }
-  ],
-  "width": [
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 257,
-      "symbol": "SystemInformation_VirtualScreenWidth",
-      "type": "function"
-    }
-  ],
-  "height": [
-    {
-      "file": "Inspection/ScreenshotCapture.cs",
-      "line": 258,
-      "symbol": "SystemInformation_VirtualScreenHeight",
       "type": "function"
     }
   ],
@@ -1106,7 +904,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 710,
+      "line": 720,
       "symbol": "Truncate",
       "type": "function"
     },
@@ -1139,6 +937,12 @@
   ],
   "highlight": [
     {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 246,
+      "symbol": "DrawHighlightBorder",
+      "type": "function"
+    },
+    {
       "file": "Picker/ElementHighlighter.cs",
       "line": 57,
       "symbol": "Highlight",
@@ -1154,7 +958,7 @@
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 441,
+      "line": 471,
       "symbol": "CreateSelectionRect",
       "type": "function"
     },
@@ -1186,7 +990,7 @@
     },
     {
       "file": "Picker/OverlayWindow.xaml.cs",
-      "line": 132,
+      "line": 160,
       "symbol": "ApplyVirtualScreenBounds",
       "type": "function"
     },
@@ -1220,13 +1024,13 @@
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 45,
+      "line": 52,
       "symbol": "SpotPicker",
       "type": "class"
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 84,
+      "line": 91,
       "symbol": "SpotPicker",
       "type": "function"
     }
@@ -1240,7 +1044,7 @@
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 96,
+      "line": 103,
       "symbol": "PickAsync",
       "type": "function"
     },
@@ -1266,7 +1070,7 @@
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 96,
+      "line": 103,
       "symbol": "PickAsync",
       "type": "function"
     }
@@ -1286,13 +1090,13 @@
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 108,
+      "line": 119,
       "symbol": "EnsureWpfDispatcher",
       "type": "function"
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 136,
+      "line": 166,
       "symbol": "EnsureWpfDispatcher",
       "type": "function"
     }
@@ -1330,7 +1134,7 @@
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 162,
+      "line": 192,
       "symbol": "InstallHooks",
       "type": "function"
     }
@@ -1344,7 +1148,7 @@
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 162,
+      "line": 192,
       "symbol": "InstallHooks",
       "type": "function"
     }
@@ -1358,13 +1162,13 @@
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 192,
+      "line": 222,
       "symbol": "MouseHookCallback",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 760,
+      "line": 770,
       "symbol": "OnTrayIconMouseClick",
       "type": "function"
     }
@@ -1384,13 +1188,13 @@
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 192,
+      "line": 222,
       "symbol": "MouseHookCallback",
       "type": "function"
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 273,
+      "line": 303,
       "symbol": "KeyboardHookCallback",
       "type": "function"
     }
@@ -1410,13 +1214,13 @@
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 192,
+      "line": 222,
       "symbol": "MouseHookCallback",
       "type": "function"
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 273,
+      "line": 303,
       "symbol": "KeyboardHookCallback",
       "type": "function"
     }
@@ -1430,7 +1234,7 @@
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 273,
+      "line": 303,
       "symbol": "KeyboardHookCallback",
       "type": "function"
     }
@@ -1444,7 +1248,7 @@
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 357,
+      "line": 387,
       "symbol": "CleanupSession",
       "type": "function"
     },
@@ -1456,36 +1260,8 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 674,
+      "line": 684,
       "symbol": "OnSessionChanged",
-      "type": "function"
-    }
-  ],
-  "overlay": [
-    {
-      "file": "Picker/OverlayWindow.xaml.cs",
-      "line": 24,
-      "symbol": "OverlayWindow",
-      "type": "function"
-    },
-    {
-      "file": "Picker/OverlayWindow.xaml.cs",
-      "line": 45,
-      "symbol": "ShowOverlay",
-      "type": "function"
-    },
-    {
-      "file": "Picker/OverlayWindow.xaml.cs",
-      "line": 57,
-      "symbol": "HideOverlay",
-      "type": "function"
-    }
-  ],
-  "window": [
-    {
-      "file": "Picker/OverlayWindow.xaml.cs",
-      "line": 24,
-      "symbol": "OverlayWindow",
       "type": "function"
     }
   ],
@@ -1503,30 +1279,22 @@
       "type": "function"
     }
   ],
-  "hide": [
-    {
-      "file": "Picker/OverlayWindow.xaml.cs",
-      "line": 57,
-      "symbol": "HideOverlay",
-      "type": "function"
-    },
-    {
-      "file": "Picker/SpotPicker.cs",
-      "line": 343,
-      "symbol": "HideSelectionRect",
-      "type": "function"
-    }
-  ],
   "set": [
     {
       "file": "Picker/OverlayWindow.xaml.cs",
-      "line": 70,
+      "line": 67,
+      "symbol": "SetFrozenBackground",
+      "type": "function"
+    },
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 98,
       "symbol": "SetInteractive",
       "type": "function"
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 407,
+      "line": 437,
       "symbol": "SetCrosshairCursor",
       "type": "function"
     },
@@ -1540,46 +1308,6 @@
       "file": "Settings/SettingsManager.cs",
       "line": 122,
       "symbol": "SetAutoStart",
-      "type": "function"
-    }
-  ],
-  "interactive": [
-    {
-      "file": "Picker/OverlayWindow.xaml.cs",
-      "line": 70,
-      "symbol": "SetInteractive",
-      "type": "function"
-    }
-  ],
-  "source": [
-    {
-      "file": "Picker/OverlayWindow.xaml.cs",
-      "line": 93,
-      "symbol": "OnSourceInitialized",
-      "type": "function"
-    }
-  ],
-  "initialized": [
-    {
-      "file": "Picker/OverlayWindow.xaml.cs",
-      "line": 93,
-      "symbol": "OnSourceInitialized",
-      "type": "function"
-    }
-  ],
-  "loaded": [
-    {
-      "file": "Picker/OverlayWindow.xaml.cs",
-      "line": 115,
-      "symbol": "OnLoaded",
-      "type": "function"
-    }
-  ],
-  "bounds": [
-    {
-      "file": "Picker/OverlayWindow.xaml.cs",
-      "line": 132,
-      "symbol": "ApplyVirtualScreenBounds",
       "type": "function"
     }
   ],
@@ -1604,7 +1332,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 559,
+      "line": 569,
       "symbol": "OnEditQueryClicked",
       "type": "function"
     },
@@ -1702,7 +1430,7 @@
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 407,
+      "line": 437,
       "symbol": "SetCrosshairCursor",
       "type": "function"
     }
@@ -1808,49 +1536,15 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 760,
+      "line": 770,
       "symbol": "OnTrayIconMouseClick",
       "type": "function"
-    }
-  ],
-  "spot": [
-    {
-      "file": "Picker/SpotPicker.cs",
-      "line": 24,
-      "symbol": "SpotResult",
-      "type": "class"
-    },
-    {
-      "file": "Picker/SpotPicker.cs",
-      "line": 45,
-      "symbol": "SpotPicker",
-      "type": "class"
-    },
-    {
-      "file": "Picker/SpotPicker.cs",
-      "line": 84,
-      "symbol": "SpotPicker",
-      "type": "function"
-    },
-    {
-      "file": "Tray/TrayApplication.cs",
-      "line": 395,
-      "symbol": "OnPickSpotClicked",
-      "type": "function"
-    }
-  ],
-  "result": [
-    {
-      "file": "Picker/SpotPicker.cs",
-      "line": 24,
-      "symbol": "SpotResult",
-      "type": "class"
     }
   ],
   "update": [
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 296,
+      "line": 326,
       "symbol": "UpdateSelectionRect",
       "type": "function"
     },
@@ -1867,42 +1561,22 @@
       "type": "function"
     }
   ],
-  "selection": [
-    {
-      "file": "Picker/SpotPicker.cs",
-      "line": 296,
-      "symbol": "UpdateSelectionRect",
-      "type": "function"
-    },
-    {
-      "file": "Picker/SpotPicker.cs",
-      "line": 343,
-      "symbol": "HideSelectionRect",
-      "type": "function"
-    },
-    {
-      "file": "Picker/SpotPicker.cs",
-      "line": 441,
-      "symbol": "CreateSelectionRect",
-      "type": "function"
-    }
-  ],
   "rect": [
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 296,
+      "line": 326,
       "symbol": "UpdateSelectionRect",
       "type": "function"
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 343,
+      "line": 373,
       "symbol": "HideSelectionRect",
       "type": "function"
     },
     {
       "file": "Picker/SpotPicker.cs",
-      "line": 441,
+      "line": 471,
       "symbol": "CreateSelectionRect",
       "type": "function"
     },
@@ -1910,30 +1584,6 @@
       "file": "Tray/IconGenerator.cs",
       "line": 144,
       "symbol": "RoundedRect",
-      "type": "function"
-    }
-  ],
-  "crosshair": [
-    {
-      "file": "Picker/SpotPicker.cs",
-      "line": 407,
-      "symbol": "SetCrosshairCursor",
-      "type": "function"
-    }
-  ],
-  "restore": [
-    {
-      "file": "Picker/SpotPicker.cs",
-      "line": 424,
-      "symbol": "RestoreSystemCursors",
-      "type": "function"
-    }
-  ],
-  "cursors": [
-    {
-      "file": "Picker/SpotPicker.cs",
-      "line": 424,
-      "symbol": "RestoreSystemCursors",
       "type": "function"
     }
   ],
@@ -1988,7 +1638,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 551,
+      "line": 561,
       "symbol": "OnCopySingleClicked",
       "type": "function"
     }
@@ -2042,7 +1692,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 613,
+      "line": 623,
       "symbol": "OnRemoveClicked",
       "type": "function"
     }
@@ -2064,7 +1714,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 713,
+      "line": 723,
       "symbol": "RunScreenshotCleanup",
       "type": "function"
     }
@@ -2186,37 +1836,37 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 551,
+      "line": 561,
       "symbol": "OnCopySingleClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 559,
+      "line": 569,
       "symbol": "OnEditQueryClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 585,
+      "line": 595,
       "symbol": "OnViewShotClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 613,
+      "line": 623,
       "symbol": "OnRemoveClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 622,
+      "line": 632,
       "symbol": "OnClearAllClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 627,
+      "line": 637,
       "symbol": "OnCopyAllClicked",
       "type": "function"
     },
@@ -2242,13 +1892,13 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 551,
+      "line": 561,
       "symbol": "OnCopySingleClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 627,
+      "line": 637,
       "symbol": "OnCopyAllClicked",
       "type": "function"
     }
@@ -2274,7 +1924,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 674,
+      "line": 684,
       "symbol": "OnSessionChanged",
       "type": "function"
     }
@@ -2310,6 +1960,12 @@
     }
   ],
   "save": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 189,
+      "symbol": "CropAndSave",
+      "type": "function"
+    },
     {
       "file": "Settings/SettingsDialog.cs",
       "line": 425,
@@ -2410,7 +2066,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 746,
+      "line": 756,
       "symbol": "DisposeCurrentMenu",
       "type": "function"
     },
@@ -2579,6 +2235,442 @@
       "type": "function"
     }
   ],
+  "capture": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 61,
+      "symbol": "CaptureElement",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 171,
+      "symbol": "CaptureFullVirtualScreen",
+      "type": "function"
+    }
+  ],
+  "old": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 135,
+      "symbol": "CleanupOldScreenshots",
+      "type": "function"
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 135,
+      "symbol": "CleanupOldScreenshots",
+      "type": "function"
+    }
+  ],
+  "full": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 171,
+      "symbol": "CaptureFullVirtualScreen",
+      "type": "function"
+    }
+  ],
+  "virtual": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 171,
+      "symbol": "CaptureFullVirtualScreen",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 335,
+      "symbol": "SystemInformation_VirtualScreenLeft",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 336,
+      "symbol": "SystemInformation_VirtualScreenTop",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 337,
+      "symbol": "SystemInformation_VirtualScreenWidth",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 338,
+      "symbol": "SystemInformation_VirtualScreenHeight",
+      "type": "function"
+    },
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 160,
+      "symbol": "ApplyVirtualScreenBounds",
+      "type": "function"
+    }
+  ],
+  "screen": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 171,
+      "symbol": "CaptureFullVirtualScreen",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 335,
+      "symbol": "SystemInformation_VirtualScreenLeft",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 336,
+      "symbol": "SystemInformation_VirtualScreenTop",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 337,
+      "symbol": "SystemInformation_VirtualScreenWidth",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 338,
+      "symbol": "SystemInformation_VirtualScreenHeight",
+      "type": "function"
+    },
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 160,
+      "symbol": "ApplyVirtualScreenBounds",
+      "type": "function"
+    }
+  ],
+  "crop": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 189,
+      "symbol": "CropAndSave",
+      "type": "function"
+    }
+  ],
+  "and": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 189,
+      "symbol": "CropAndSave",
+      "type": "function"
+    }
+  ],
+  "drawing": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 222,
+      "symbol": "DrawingRectangle",
+      "type": "function"
+    }
+  ],
+  "draw": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 246,
+      "symbol": "DrawHighlightBorder",
+      "type": "function"
+    }
+  ],
+  "border": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 246,
+      "symbol": "DrawHighlightBorder",
+      "type": "function"
+    }
+  ],
+  "filename": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 279,
+      "symbol": "BuildFilename",
+      "type": "function"
+    }
+  ],
+  "folder": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 299,
+      "symbol": "EnsureFolder",
+      "type": "function"
+    }
+  ],
+  "system": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 335,
+      "symbol": "SystemInformation_VirtualScreenLeft",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 336,
+      "symbol": "SystemInformation_VirtualScreenTop",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 337,
+      "symbol": "SystemInformation_VirtualScreenWidth",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 338,
+      "symbol": "SystemInformation_VirtualScreenHeight",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 454,
+      "symbol": "RestoreSystemCursors",
+      "type": "function"
+    }
+  ],
+  "information": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 335,
+      "symbol": "SystemInformation_VirtualScreenLeft",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 336,
+      "symbol": "SystemInformation_VirtualScreenTop",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 337,
+      "symbol": "SystemInformation_VirtualScreenWidth",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 338,
+      "symbol": "SystemInformation_VirtualScreenHeight",
+      "type": "function"
+    }
+  ],
+  "left": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 335,
+      "symbol": "SystemInformation_VirtualScreenLeft",
+      "type": "function"
+    }
+  ],
+  "top": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 336,
+      "symbol": "SystemInformation_VirtualScreenTop",
+      "type": "function"
+    }
+  ],
+  "width": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 337,
+      "symbol": "SystemInformation_VirtualScreenWidth",
+      "type": "function"
+    }
+  ],
+  "height": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 338,
+      "symbol": "SystemInformation_VirtualScreenHeight",
+      "type": "function"
+    }
+  ],
+  "overlay": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 24,
+      "symbol": "OverlayWindow",
+      "type": "function"
+    },
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 45,
+      "symbol": "ShowOverlay",
+      "type": "function"
+    },
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 57,
+      "symbol": "HideOverlay",
+      "type": "function"
+    }
+  ],
+  "window": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 24,
+      "symbol": "OverlayWindow",
+      "type": "function"
+    }
+  ],
+  "hide": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 57,
+      "symbol": "HideOverlay",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 373,
+      "symbol": "HideSelectionRect",
+      "type": "function"
+    }
+  ],
+  "frozen": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 67,
+      "symbol": "SetFrozenBackground",
+      "type": "function"
+    }
+  ],
+  "background": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 67,
+      "symbol": "SetFrozenBackground",
+      "type": "function"
+    }
+  ],
+  "interactive": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 98,
+      "symbol": "SetInteractive",
+      "type": "function"
+    }
+  ],
+  "source": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 121,
+      "symbol": "OnSourceInitialized",
+      "type": "function"
+    }
+  ],
+  "initialized": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 121,
+      "symbol": "OnSourceInitialized",
+      "type": "function"
+    }
+  ],
+  "loaded": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 143,
+      "symbol": "OnLoaded",
+      "type": "function"
+    }
+  ],
+  "bounds": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 160,
+      "symbol": "ApplyVirtualScreenBounds",
+      "type": "function"
+    }
+  ],
+  "spot": [
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 24,
+      "symbol": "SpotResult",
+      "type": "class"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 52,
+      "symbol": "SpotPicker",
+      "type": "class"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 91,
+      "symbol": "SpotPicker",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 395,
+      "symbol": "OnPickSpotClicked",
+      "type": "function"
+    }
+  ],
+  "result": [
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 24,
+      "symbol": "SpotResult",
+      "type": "class"
+    }
+  ],
+  "selection": [
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 326,
+      "symbol": "UpdateSelectionRect",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 373,
+      "symbol": "HideSelectionRect",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 471,
+      "symbol": "CreateSelectionRect",
+      "type": "function"
+    }
+  ],
+  "crosshair": [
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 437,
+      "symbol": "SetCrosshairCursor",
+      "type": "function"
+    }
+  ],
+  "restore": [
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 454,
+      "symbol": "RestoreSystemCursors",
+      "type": "function"
+    }
+  ],
+  "cursors": [
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 454,
+      "symbol": "RestoreSystemCursors",
+      "type": "function"
+    }
+  ],
   "tray": [
     {
       "file": "Tray/TrayApplication.cs",
@@ -2594,7 +2686,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 760,
+      "line": 770,
       "symbol": "OnTrayIconMouseClick",
       "type": "function"
     }
@@ -2624,7 +2716,7 @@
   "edit": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 559,
+      "line": 569,
       "symbol": "OnEditQueryClicked",
       "type": "function"
     }
@@ -2632,7 +2724,7 @@
   "view": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 585,
+      "line": 595,
       "symbol": "OnViewShotClicked",
       "type": "function"
     }
@@ -2640,7 +2732,7 @@
   "shot": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 585,
+      "line": 595,
       "symbol": "OnViewShotClicked",
       "type": "function"
     }
@@ -2648,7 +2740,7 @@
   "pressed": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 651,
+      "line": 661,
       "symbol": "OnHotkeyPressed",
       "type": "function"
     }
@@ -2656,7 +2748,7 @@
   "find": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 685,
+      "line": 695,
       "symbol": "FindElement",
       "type": "function"
     }
@@ -2664,7 +2756,7 @@
   "description": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 696,
+      "line": 706,
       "symbol": "BuildElementDescription",
       "type": "function"
     }
@@ -2672,7 +2764,7 @@
   "run": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 713,
+      "line": 723,
       "symbol": "RunScreenshotCleanup",
       "type": "function"
     }
@@ -2680,7 +2772,7 @@
   "refresh": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 731,
+      "line": 741,
       "symbol": "RefreshTooltip",
       "type": "function"
     }
@@ -2688,7 +2780,7 @@
   "tooltip": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 731,
+      "line": 741,
       "symbol": "RefreshTooltip",
       "type": "function"
     }
@@ -2696,7 +2788,7 @@
   "current": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 746,
+      "line": 756,
       "symbol": "DisposeCurrentMenu",
       "type": "function"
     }
@@ -2704,7 +2796,7 @@
   "click": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 760,
+      "line": 770,
       "symbol": "OnTrayIconMouseClick",
       "type": "function"
     }

@@ -212,6 +212,11 @@ namespace UIInspector.Interop
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool SetForegroundWindow(IntPtr hWnd);
 
+        /// <summary>Deletes a GDI object and frees its system resources.</summary>
+        [DllImport("gdi32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool DeleteObject(IntPtr hObject);
+
         // =====================================================================
         // Window long / extended styles (overlay transparency)
         // =====================================================================

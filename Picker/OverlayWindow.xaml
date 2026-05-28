@@ -7,5 +7,9 @@
         Topmost="True"
         ShowInTaskbar="False"
         WindowState="Normal">
-    <Canvas x:Name="OverlayCanvas"/>
+    <Grid>
+        <Image x:Name="FrozenImage" Stretch="Fill" Visibility="Collapsed"/>
+        <Rectangle x:Name="DimOverlay" Fill="#60000000" Visibility="Collapsed"/>
+        <Canvas x:Name="OverlayCanvas"/>
+    </Grid>
 </Window>

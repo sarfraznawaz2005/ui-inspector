@@ -108,33 +108,9 @@ namespace UIInspector.Inspection
             // 3. Draw the 2 px highlight border around the element area
             //    within the captured image coordinate space.
             // ------------------------------------------------------------------
-            DrawingColor borderColor = ParseColor(highlightColor, DrawingColor.FromArgb(0x44, 0x88, 0xFF));
-
-            // Element rect in capture-local coordinates.
-            int localElemLeft = elemLeft - captureLeft;
-            int localElemTop  = elemTop  - captureTop;
-
-            // Clamp so the border fits entirely within the bitmap.
-            int borderLeft   = Math.Max(localElemLeft,                         0);
-            int borderTop    = Math.Max(localElemTop,                          0);
-            int borderRight  = Math.Min(localElemLeft + elemWidth  - 1, captureWidth  - 1);
-            int borderBottom = Math.Min(localElemTop  + elemHeight - 1, captureHeight - 1);
-            int borderWidth  = Math.Max(borderRight  - borderLeft + 1, 1);
-            int borderHeight = Math.Max(borderBottom - borderTop  + 1, 1);
-
-            using (DrawingGraphics g = DrawingGraphics.FromImage(bitmap))
-            using (var pen = new DrawingPen(borderColor, BorderWidthPx))
-            {
-                // DrawRectangle draws at the outer edge of the pen width; nudge
-                // inward by half the pen width so all pixels fall inside the bitmap.
-                int inset = BorderWidthPx / 2;
-                g.DrawRectangle(pen,
-                    new DrawingRectangle(
-                        borderLeft   + inset,
-                        borderTop    + inset,
-                        Math.Max(borderWidth  - BorderWidthPx, 1),
-                        Math.Max(borderHeight - BorderWidthPx, 1)));
-            }
+            DrawHighlightBorder(bitmap, captureWidth, captureHeight,
+                elemLeft - captureLeft, elemTop - captureTop,
+                elemWidth, elemHeight, highlightColor);
 
             // ------------------------------------------------------------------
             // 4. Save as PNG
@@ -188,9 +164,113 @@ namespace UIInspector.Inspection
             }
         }
 
+        /// <summary>
+        /// Captures the full virtual screen (all monitors) and returns the bitmap.
+        /// The caller is responsible for disposing the returned bitmap.
+        /// </summary>
+        public static DrawingBitmap CaptureFullVirtualScreen()
+        {
+            int left   = SystemInformation_VirtualScreenLeft();
+            int top    = SystemInformation_VirtualScreenTop();
+            int width  = SystemInformation_VirtualScreenWidth();
+            int height = SystemInformation_VirtualScreenHeight();
+
+            var bitmap = new DrawingBitmap(width, height);
+            using (var g = DrawingGraphics.FromImage(bitmap))
+                g.CopyFromScreen(left, top, 0, 0, new System.Drawing.Size(width, height));
+
+            return bitmap;
+        }
+
+        /// <summary>
+        /// Crops <paramref name="bounds"/> from a pre-captured <paramref name="source"/> bitmap,
+        /// draws the highlight border, saves the result as a PNG, and returns the absolute path.
+        /// </summary>
+        public static string CropAndSave(
+            DrawingBitmap source,
+            WpfRect        bounds,
+            string         screenshotFolder,
+            string?        highlightColor = null)
+        {
+            int screenLeft   = SystemInformation_VirtualScreenLeft();
+            int screenTop    = SystemInformation_VirtualScreenTop();
+            int screenWidth  = SystemInformation_VirtualScreenWidth();
+            int screenRight  = screenLeft + screenWidth;
+            int screenHeight = SystemInformation_VirtualScreenHeight();
+            int screenBottom = screenTop  + screenHeight;
+
+            int elemLeft   = (int)Math.Round(bounds.Left);
+            int elemTop    = (int)Math.Round(bounds.Top);
+            int elemWidth  = Math.Max((int)Math.Round(bounds.Width),  MinSizePx);
+            int elemHeight = Math.Max((int)Math.Round(bounds.Height), MinSizePx);
+
+            int captureLeft   = Math.Max(elemLeft - PaddingPx, screenLeft);
+            int captureTop    = Math.Max(elemTop  - PaddingPx, screenTop);
+            int captureRight  = Math.Min(elemLeft + elemWidth  + PaddingPx, screenRight);
+            int captureBottom = Math.Min(elemTop  + elemHeight + PaddingPx, screenBottom);
+
+            int captureWidth  = captureRight  - captureLeft;
+            int captureHeight = captureBottom - captureTop;
+
+            // Convert screen-coordinate crop rect to bitmap-local coords.
+            int bmpX = Math.Clamp(captureLeft - screenLeft, 0, source.Width  - 1);
+            int bmpY = Math.Clamp(captureTop  - screenTop,  0, source.Height - 1);
+            captureWidth  = Math.Clamp(captureWidth,  1, source.Width  - bmpX);
+            captureHeight = Math.Clamp(captureHeight, 1, source.Height - bmpY);
+
+            using var bitmap = source.Clone(
+                new DrawingRectangle(bmpX, bmpY, captureWidth, captureHeight),
+                source.PixelFormat);
+
+            DrawHighlightBorder(bitmap, captureWidth, captureHeight,
+                elemLeft - captureLeft, elemTop - captureTop,
+                elemWidth, elemHeight, highlightColor);
+
+            EnsureFolder(screenshotFolder);
+            string filename = BuildFilename();
+            string fullPath = Path.Combine(screenshotFolder, filename);
+            bitmap.Save(fullPath, System.Drawing.Imaging.ImageFormat.Png);
+            Debug.WriteLine($"[ScreenshotCapture] Saved {fullPath}");
+            return Path.GetFullPath(fullPath);
+        }
+
         // =====================================================================
         // Private helpers
         // =====================================================================
+
+        /// <summary>
+        /// Draws a 2 px highlight border inside <paramref name="bitmap"/> at the
+        /// element's local position.  Shared by <see cref="CaptureElement"/> and
+        /// <see cref="CropAndSave"/>.
+        /// </summary>
+        private static void DrawHighlightBorder(
+            DrawingBitmap bitmap,
+            int           captureWidth,
+            int           captureHeight,
+            int           localElemLeft,
+            int           localElemTop,
+            int           elemWidth,
+            int           elemHeight,
+            string?       highlightColor)
+        {
+            DrawingColor borderColor = ParseColor(highlightColor, DrawingColor.FromArgb(0x44, 0x88, 0xFF));
+
+            int borderLeft   = Math.Max(localElemLeft, 0);
+            int borderTop    = Math.Max(localElemTop,  0);
+            int borderRight  = Math.Min(localElemLeft + elemWidth  - 1, captureWidth  - 1);
+            int borderBottom = Math.Min(localElemTop  + elemHeight - 1, captureHeight - 1);
+            int borderWidth  = Math.Max(borderRight  - borderLeft + 1, 1);
+            int borderHeight = Math.Max(borderBottom - borderTop  + 1, 1);
+
+            using var g   = DrawingGraphics.FromImage(bitmap);
+            using var pen = new DrawingPen(borderColor, BorderWidthPx);
+            int inset = BorderWidthPx / 2;
+            g.DrawRectangle(pen, new DrawingRectangle(
+                borderLeft   + inset,
+                borderTop    + inset,
+                Math.Max(borderWidth  - BorderWidthPx, 1),
+                Math.Max(borderHeight - BorderWidthPx, 1)));
+        }
 
         /// <summary>
         /// Builds a filename of the form <c>elem-{yyyyMMdd-HHmmss}-{seq:D3}.png</c>.

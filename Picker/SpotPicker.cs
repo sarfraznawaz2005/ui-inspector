@@ -31,6 +31,13 @@ namespace UIInspector.Picker
         /// <see langword="null"/> if nothing was found there.
         /// </summary>
         public ElementInfo? DetectedElement { get; init; }
+
+        /// <summary>
+        /// Full-screen bitmap captured at trigger time.  Used to save the screenshot
+        /// from the frozen image rather than re-capturing the live screen.
+        /// Caller must dispose this after use.
+        /// </summary>
+        public System.Drawing.Bitmap? FrozenBitmap { get; init; }
     }
 
     /// <summary>
@@ -103,6 +110,10 @@ namespace UIInspector.Picker
             _settingsSnapshot = settings;
             _tcs = new TaskCompletionSource<SpotResult?>(TaskCreationOptions.RunContinuationsAsynchronously);
 
+            // Capture the full virtual screen before the overlay appears so tooltips
+            // and other transient UI are preserved in the frozen image.
+            System.Drawing.Bitmap frozenBitmap = ScreenshotCapture.CaptureFullVirtualScreen();
+
             try
             {
                 await EnsureWpfDispatcher();
@@ -110,6 +121,7 @@ namespace UIInspector.Picker
                 WpfApp.Current.Dispatcher.Invoke(() =>
                 {
                     _overlay       = new OverlayWindow();
+                    _overlay.SetFrozenBackground(frozenBitmap);
                     _selectionRect = CreateSelectionRect(settings);
                     _overlay.Canvas.Children.Add(_selectionRect);
                     _overlay.ShowOverlay();
@@ -121,7 +133,25 @@ namespace UIInspector.Picker
                 SetCrosshairCursor();
                 InstallHooks();
 
-                return await _tcs.Task;
+                SpotResult? inner = await _tcs.Task;
+
+                if (inner == null)
+                {
+                    frozenBitmap.Dispose();
+                    return null;
+                }
+
+                return new SpotResult
+                {
+                    DrawnBounds     = inner.DrawnBounds,
+                    DetectedElement = inner.DetectedElement,
+                    FrozenBitmap    = frozenBitmap,
+                };
+            }
+            catch
+            {
+                frozenBitmap.Dispose();
+                throw;
             }
             finally
             {

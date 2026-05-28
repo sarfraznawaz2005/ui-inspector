@@ -60,6 +60,34 @@ namespace UIInspector.Picker
         }
 
         /// <summary>
+        /// Displays a pre-captured full-screen bitmap as the overlay background so the
+        /// screen appears frozen during spot-picking, preserving tooltips and other
+        /// transient UI.  Called before <see cref="ShowOverlay"/>.
+        /// </summary>
+        public void SetFrozenBackground(System.Drawing.Bitmap bitmap)
+        {
+            IntPtr hBitmap = IntPtr.Zero;
+            try
+            {
+                hBitmap = bitmap.GetHbitmap();
+                var source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
+                    hBitmap,
+                    IntPtr.Zero,
+                    System.Windows.Int32Rect.Empty,
+                    System.Windows.Media.Imaging.BitmapSizeOptions.FromEmptyOptions());
+                source.Freeze();
+                FrozenImage.Source     = source;
+                FrozenImage.Visibility = System.Windows.Visibility.Visible;
+                DimOverlay.Visibility  = System.Windows.Visibility.Visible;
+            }
+            finally
+            {
+                if (hBitmap != IntPtr.Zero)
+                    NativeMethods.DeleteObject(hBitmap);
+            }
+        }
+
+        /// <summary>
         /// Toggles whether the overlay window receives mouse input.
         ///
         /// Pass <c>true</c> to remove <c>WS_EX_TRANSPARENT</c> so WPF mouse events

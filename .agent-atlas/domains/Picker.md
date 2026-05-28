@@ -2,7 +2,7 @@
 
 **Directory:** `Picker`
 **Files:** 5
-**Symbols:** 54
+**Symbols:** 55
 
 ## Files
 
@@ -45,10 +45,11 @@
 - `OverlayWindow` (line 24)
 - `ShowOverlay` (line 45)
 - `HideOverlay` (line 57)
-- `SetInteractive` (line 70)
-- `OnSourceInitialized` (line 93)
-- `OnLoaded` (line 115)
-- `ApplyVirtualScreenBounds` (line 132)
+- `SetFrozenBackground` (line 67)
+- `SetInteractive` (line 98)
+- `OnSourceInitialized` (line 121)
+- `OnLoaded` (line 143)
+- `ApplyVirtualScreenBounds` (line 160)
 
 
 ### `Picker/QueryDialog.cs`
@@ -71,26 +72,26 @@
 
 **Classes:**
 - `SpotResult` (line 24)
-- `SpotPicker` (line 45)
+- `SpotPicker` (line 52)
 
 **Functions:**
-- `SpotPicker` (line 84)
-- `Dispose` (line 86)
-- `PickAsync` (line 96)
-- `EnsureWpfDispatcher` (line 108)
-- `EnsureWpfDispatcher` (line 136)
-- `InstallHooks` (line 162)
-- `MouseHookCallback` (line 192)
-- `if` (line 207)
-- `if` (line 214)
-- `if` (line 261)
-- `KeyboardHookCallback` (line 273)
-- `UpdateSelectionRect` (line 296)
-- `HideSelectionRect` (line 343)
-- `CleanupSession` (line 357)
-- `SetCrosshairCursor` (line 407)
-- `RestoreSystemCursors` (line 424)
-- `CreateSelectionRect` (line 441)
+- `SpotPicker` (line 91)
+- `Dispose` (line 93)
+- `PickAsync` (line 103)
+- `EnsureWpfDispatcher` (line 119)
+- `EnsureWpfDispatcher` (line 166)
+- `InstallHooks` (line 192)
+- `MouseHookCallback` (line 222)
+- `if` (line 237)
+- `if` (line 244)
+- `if` (line 291)
+- `KeyboardHookCallback` (line 303)
+- `UpdateSelectionRect` (line 326)
+- `HideSelectionRect` (line 373)
+- `CleanupSession` (line 387)
+- `SetCrosshairCursor` (line 437)
+- `RestoreSystemCursors` (line 454)
+- `CreateSelectionRect` (line 471)
 
 
 ## Change Recipe

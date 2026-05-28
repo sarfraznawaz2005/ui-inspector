@@ -2,7 +2,7 @@
 
 **Directory:** `Inspection`
 **Files:** 5
-**Symbols:** 34
+**Symbols:** 37
 
 ## Files
 
@@ -37,15 +37,18 @@
 
 **Functions:**
 - `CaptureElement` (line 61)
-- `DrawingRectangle` (line 132)
-- `CleanupOldScreenshots` (line 159)
-- `BuildFilename` (line 199)
-- `EnsureFolder` (line 219)
-- `ParseColor` (line 233)
-- `SystemInformation_VirtualScreenLeft` (line 255)
-- `SystemInformation_VirtualScreenTop` (line 256)
-- `SystemInformation_VirtualScreenWidth` (line 257)
-- `SystemInformation_VirtualScreenHeight` (line 258)
+- `CleanupOldScreenshots` (line 135)
+- `CaptureFullVirtualScreen` (line 171)
+- `CropAndSave` (line 189)
+- `DrawingRectangle` (line 222)
+- `DrawHighlightBorder` (line 246)
+- `BuildFilename` (line 279)
+- `EnsureFolder` (line 299)
+- `ParseColor` (line 313)
+- `SystemInformation_VirtualScreenLeft` (line 335)
+- `SystemInformation_VirtualScreenTop` (line 336)
+- `SystemInformation_VirtualScreenWidth` (line 337)
+- `SystemInformation_VirtualScreenHeight` (line 338)
 
 
 ### `Inspection/SelectorBuilder.cs`
