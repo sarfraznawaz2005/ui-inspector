@@ -565,12 +565,21 @@ namespace UIInspector.Tray
                 element.ControlType,
                 element.Name,
                 element.AutomationId,
-                existingQuery: element.Query);
+                existingQuery: element.Query,
+                isEdit: true);
 
             DialogResult result = dialog.ShowDialog();
 
             if (result == DialogResult.OK)
+            {
                 _session.UpdateQuery(index, dialog.QueryText);
+
+                if (_settings.AutoCopy)
+                {
+                    ClipboardExporter.ExportToClipboard(_session);
+                    Debug.WriteLine("[TrayApplication] Auto-copied to clipboard after query edit.");
+                }
+            }
         }
 
         private void OnViewShotClicked(int index)

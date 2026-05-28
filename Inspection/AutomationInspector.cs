@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Automation;
+using UIInspector.Interop;
 using WpfPoint = System.Windows.Point;
 using WpfRect  = System.Windows.Rect;
 
@@ -18,6 +19,9 @@ namespace UIInspector.Inspection
     /// </summary>
     public static class AutomationInspector
     {
+        // Cached once at startup — used to skip UIA inspection of our own windows.
+        private static readonly int _ownProcessId = Process.GetCurrentProcess().Id;
+
         // =====================================================================
         // Public API
         // =====================================================================
@@ -37,6 +41,17 @@ namespace UIInspector.Inspection
         /// </param>
         public static async Task<ElementInfo?> InspectAtPoint(WpfPoint screenPoint)
         {
+            // Inspecting our own process via UIA causes cross-thread deadlocks.
+            // Use WindowFromPoint (fast, no UIA) to detect this before committing.
+            var winPoint = new POINT { X = (int)screenPoint.X, Y = (int)screenPoint.Y };
+            IntPtr hwnd = NativeMethods.WindowFromPoint(winPoint);
+            if (hwnd != IntPtr.Zero)
+            {
+                NativeMethods.GetWindowThreadProcessId(hwnd, out uint windowPid);
+                if ((int)windowPid == _ownProcessId)
+                    return null;
+            }
+
             using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(2));
             CancellationToken token = cts.Token;
 

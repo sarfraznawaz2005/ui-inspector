@@ -84,3 +84,5 @@ The app runs as a WinForms `ApplicationContext` — its lifetime is tied to the 
 - **WinForms + WPF hybrid**: WinForms for tray/dialogs, WPF for the overlay (WPF handles window transparency better)
 - **DPI declared in both** `app.manifest` and `.csproj` `ApplicationHighDpiMode` — the WFAC010 warning is intentionally suppressed
 - **PublishSingleFile/SelfContained** are only active during `dotnet publish` with `/p:PublishingBinary=true` to avoid conflicts when the app is running during development builds
+
+Before starting any task, read .agent-atlas/index.json first.

@@ -28,11 +28,11 @@ namespace UIInspector.Picker
         /// </summary>
         public string QueryText => _queryTextBox.Text;
 
-        public QueryDialog(string controlType, string name, string automationId, string existingQuery)
+        public QueryDialog(string controlType, string name, string automationId, string existingQuery, bool isEdit = false)
         {
             SuspendLayout();
 
-            Text             = "Add Element Query";
+            Text             = isEdit ? "Edit Element Query" : "Add Element Query";
             Icon             = LoadAppIcon();
             FormBorderStyle  = FormBorderStyle.FixedDialog;
             StartPosition    = FormStartPosition.Manual;
@@ -113,7 +113,7 @@ namespace UIInspector.Picker
 
             _addButton = new Button
             {
-                Text         = "Add",
+                Text         = isEdit ? "Save" : "Add",
                 Location     = new Point(designW - pad - btnW * 2 - 10, btnY),
                 Size         = new Size(btnW, btnH),
                 DialogResult = DialogResult.OK,

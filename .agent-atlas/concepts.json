@@ -1,0 +1,2712 @@
+{
+  "main": [
+    {
+      "file": "Program.cs",
+      "line": 30,
+      "symbol": "Main",
+      "type": "function"
+    }
+  ],
+  "unhandled": [
+    {
+      "file": "Program.cs",
+      "line": 109,
+      "symbol": "OnUnhandledException",
+      "type": "function"
+    }
+  ],
+  "exception": [
+    {
+      "file": "Program.cs",
+      "line": 109,
+      "symbol": "OnUnhandledException",
+      "type": "function"
+    },
+    {
+      "file": "Program.cs",
+      "line": 140,
+      "symbol": "OnThreadException",
+      "type": "function"
+    }
+  ],
+  "thread": [
+    {
+      "file": "Program.cs",
+      "line": 140,
+      "symbol": "OnThreadException",
+      "type": "function"
+    }
+  ],
+  "log": [
+    {
+      "file": "Program.cs",
+      "line": 173,
+      "symbol": "LogError",
+      "type": "function"
+    }
+  ],
+  "error": [
+    {
+      "file": "Program.cs",
+      "line": 173,
+      "symbol": "LogError",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 489,
+      "symbol": "ShowError",
+      "type": "function"
+    }
+  ],
+  "global": [
+    {
+      "file": "Hotkeys/GlobalHotkeyManager.cs",
+      "line": 17,
+      "symbol": "GlobalHotkeyManager",
+      "type": "class"
+    },
+    {
+      "file": "Hotkeys/GlobalHotkeyManager.cs",
+      "line": 45,
+      "symbol": "GlobalHotkeyManager",
+      "type": "function"
+    }
+  ],
+  "hotkey": [
+    {
+      "file": "Hotkeys/GlobalHotkeyManager.cs",
+      "line": 17,
+      "symbol": "GlobalHotkeyManager",
+      "type": "class"
+    },
+    {
+      "file": "Hotkeys/GlobalHotkeyManager.cs",
+      "line": 45,
+      "symbol": "GlobalHotkeyManager",
+      "type": "function"
+    },
+    {
+      "file": "Hotkeys/GlobalHotkeyManager.cs",
+      "line": 177,
+      "symbol": "TryParseHotkey",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 352,
+      "symbol": "OnHotkeyBoxKeyDown",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 651,
+      "symbol": "OnHotkeyPressed",
+      "type": "function"
+    }
+  ],
+  "manager": [
+    {
+      "file": "Hotkeys/GlobalHotkeyManager.cs",
+      "line": 17,
+      "symbol": "GlobalHotkeyManager",
+      "type": "class"
+    },
+    {
+      "file": "Hotkeys/GlobalHotkeyManager.cs",
+      "line": 45,
+      "symbol": "GlobalHotkeyManager",
+      "type": "function"
+    }
+  ],
+  "register": [
+    {
+      "file": "Hotkeys/GlobalHotkeyManager.cs",
+      "line": 74,
+      "symbol": "Register",
+      "type": "function"
+    }
+  ],
+  "unregister": [
+    {
+      "file": "Hotkeys/GlobalHotkeyManager.cs",
+      "line": 110,
+      "symbol": "Unregister",
+      "type": "function"
+    },
+    {
+      "file": "Hotkeys/GlobalHotkeyManager.cs",
+      "line": 124,
+      "symbol": "UnregisterAll",
+      "type": "function"
+    }
+  ],
+  "all": [
+    {
+      "file": "Hotkeys/GlobalHotkeyManager.cs",
+      "line": 124,
+      "symbol": "UnregisterAll",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 622,
+      "symbol": "OnClearAllClicked",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 627,
+      "symbol": "OnCopyAllClicked",
+      "type": "function"
+    }
+  ],
+  "dispose": [
+    {
+      "file": "Hotkeys/GlobalHotkeyManager.cs",
+      "line": 156,
+      "symbol": "Dispose",
+      "type": "function"
+    },
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 86,
+      "symbol": "Dispose",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 86,
+      "symbol": "Dispose",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 746,
+      "symbol": "DisposeCurrentMenu",
+      "type": "function"
+    }
+  ],
+  "try": [
+    {
+      "file": "Hotkeys/GlobalHotkeyManager.cs",
+      "line": 177,
+      "symbol": "TryParseHotkey",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 215,
+      "symbol": "TryGetNameFromChildren",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 494,
+      "symbol": "TryParseHexColor",
+      "type": "function"
+    }
+  ],
+  "parse": [
+    {
+      "file": "Hotkeys/GlobalHotkeyManager.cs",
+      "line": 177,
+      "symbol": "TryParseHotkey",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 233,
+      "symbol": "ParseColor",
+      "type": "function"
+    },
+    {
+      "file": "Picker/ElementHighlighter.cs",
+      "line": 151,
+      "symbol": "ParseColor",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 494,
+      "symbol": "TryParseHexColor",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 513,
+      "symbol": "ParseColorSafe",
+      "type": "function"
+    }
+  ],
+  "wpf": [
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 67,
+      "symbol": "WpfPoint",
+      "type": "function"
+    },
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 119,
+      "symbol": "EnsureWpfDispatcher",
+      "type": "function"
+    },
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 164,
+      "symbol": "EnsureWpfDispatcher",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 108,
+      "symbol": "EnsureWpfDispatcher",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 136,
+      "symbol": "EnsureWpfDispatcher",
+      "type": "function"
+    }
+  ],
+  "element": [
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 74,
+      "symbol": "ExtractElementInfo",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 108,
+      "symbol": "ExtractElementInfo",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ElementInfo.cs",
+      "line": 14,
+      "symbol": "ElementInfo",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 61,
+      "symbol": "CaptureElement",
+      "type": "function"
+    },
+    {
+      "file": "Picker/ElementHighlighter.cs",
+      "line": 20,
+      "symbol": "ElementHighlighter",
+      "type": "class"
+    },
+    {
+      "file": "Picker/ElementHighlighter.cs",
+      "line": 39,
+      "symbol": "ElementHighlighter",
+      "type": "function"
+    },
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 34,
+      "symbol": "ElementPicker",
+      "type": "class"
+    },
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 84,
+      "symbol": "ElementPicker",
+      "type": "function"
+    },
+    {
+      "file": "Session/CapturedElement.cs",
+      "line": 14,
+      "symbol": "CapturedElement",
+      "type": "class"
+    },
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 69,
+      "symbol": "AppendElement",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 117,
+      "symbol": "UpdateElementCount",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 213,
+      "symbol": "OnPickElementClicked",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 685,
+      "symbol": "FindElement",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 696,
+      "symbol": "BuildElementDescription",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayMenuBuilder.cs",
+      "line": 198,
+      "symbol": "BuildElementMenuItem",
+      "type": "function"
+    }
+  ],
+  "info": [
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 74,
+      "symbol": "ExtractElementInfo",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 108,
+      "symbol": "ExtractElementInfo",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ElementInfo.cs",
+      "line": 14,
+      "symbol": "ElementInfo",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 78,
+      "symbol": "GetParentInfo",
+      "type": "function"
+    }
+  ],
+  "get": [
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 184,
+      "symbol": "GetStringProperty",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 197,
+      "symbol": "GetBoolProperty",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 215,
+      "symbol": "TryGetNameFromChildren",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 258,
+      "symbol": "GetProcessName",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 78,
+      "symbol": "GetParentInfo",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 101,
+      "symbol": "GetSiblings",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 188,
+      "symbol": "GetControlTypeName",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 205,
+      "symbol": "GetChildIndex",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 254,
+      "symbol": "GetStringProp",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 516,
+      "symbol": "GetContrastColor",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsManager.cs",
+      "line": 159,
+      "symbol": "GetAutoStartEnabled",
+      "type": "function"
+    }
+  ],
+  "string": [
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 184,
+      "symbol": "GetStringProperty",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 254,
+      "symbol": "GetStringProp",
+      "type": "function"
+    }
+  ],
+  "name": [
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 215,
+      "symbol": "TryGetNameFromChildren",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 258,
+      "symbol": "GetProcessName",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 188,
+      "symbol": "GetControlTypeName",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 276,
+      "symbol": "TruncateName",
+      "type": "function"
+    },
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 135,
+      "symbol": "TruncateName",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayMenuBuilder.cs",
+      "line": 277,
+      "symbol": "TruncateName",
+      "type": "function"
+    }
+  ],
+  "process": [
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 258,
+      "symbol": "GetProcessName",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ProcessDetector.cs",
+      "line": 108,
+      "symbol": "ClassifyProcess",
+      "type": "function"
+    }
+  ],
+  "detect": [
+    {
+      "file": "Inspection/ProcessDetector.cs",
+      "line": 65,
+      "symbol": "Detect",
+      "type": "function"
+    }
+  ],
+  "clear": [
+    {
+      "file": "Inspection/ProcessDetector.cs",
+      "line": 96,
+      "symbol": "ClearCache",
+      "type": "function"
+    },
+    {
+      "file": "Picker/ElementHighlighter.cs",
+      "line": 104,
+      "symbol": "Clear",
+      "type": "function"
+    },
+    {
+      "file": "Session/InspectionSession.cs",
+      "line": 110,
+      "symbol": "Clear",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 622,
+      "symbol": "OnClearAllClicked",
+      "type": "function"
+    }
+  ],
+  "cache": [
+    {
+      "file": "Inspection/ProcessDetector.cs",
+      "line": 96,
+      "symbol": "ClearCache",
+      "type": "function"
+    }
+  ],
+  "classify": [
+    {
+      "file": "Inspection/ProcessDetector.cs",
+      "line": 108,
+      "symbol": "ClassifyProcess",
+      "type": "function"
+    }
+  ],
+  "capture": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 61,
+      "symbol": "CaptureElement",
+      "type": "function"
+    }
+  ],
+  "drawing": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 132,
+      "symbol": "DrawingRectangle",
+      "type": "function"
+    }
+  ],
+  "rectangle": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 132,
+      "symbol": "DrawingRectangle",
+      "type": "function"
+    },
+    {
+      "file": "Picker/ElementHighlighter.cs",
+      "line": 117,
+      "symbol": "CreateRectangle",
+      "type": "function"
+    },
+    {
+      "file": "Tray/IconGenerator.cs",
+      "line": 72,
+      "symbol": "Rectangle",
+      "type": "function"
+    }
+  ],
+  "cleanup": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 159,
+      "symbol": "CleanupOldScreenshots",
+      "type": "function"
+    },
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 329,
+      "symbol": "CleanupSession",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 357,
+      "symbol": "CleanupSession",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 713,
+      "symbol": "RunScreenshotCleanup",
+      "type": "function"
+    }
+  ],
+  "old": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 159,
+      "symbol": "CleanupOldScreenshots",
+      "type": "function"
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 159,
+      "symbol": "CleanupOldScreenshots",
+      "type": "function"
+    }
+  ],
+  "build": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 199,
+      "symbol": "BuildFilename",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 34,
+      "symbol": "BuildSelector",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 66,
+      "symbol": "BuildFallbackSegment",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 148,
+      "symbol": "BuildSegment",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 170,
+      "symbol": "BuildFallbackSegment",
+      "type": "function"
+    },
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 294,
+      "symbol": "BuildHeaderText",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 138,
+      "symbol": "BuildMenu",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 696,
+      "symbol": "BuildElementDescription",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayMenuBuilder.cs",
+      "line": 52,
+      "symbol": "Build",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayMenuBuilder.cs",
+      "line": 198,
+      "symbol": "BuildElementMenuItem",
+      "type": "function"
+    }
+  ],
+  "filename": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 199,
+      "symbol": "BuildFilename",
+      "type": "function"
+    }
+  ],
+  "ensure": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 219,
+      "symbol": "EnsureFolder",
+      "type": "function"
+    },
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 119,
+      "symbol": "EnsureWpfDispatcher",
+      "type": "function"
+    },
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 164,
+      "symbol": "EnsureWpfDispatcher",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 108,
+      "symbol": "EnsureWpfDispatcher",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 136,
+      "symbol": "EnsureWpfDispatcher",
+      "type": "function"
+    }
+  ],
+  "folder": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 219,
+      "symbol": "EnsureFolder",
+      "type": "function"
+    }
+  ],
+  "color": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 233,
+      "symbol": "ParseColor",
+      "type": "function"
+    },
+    {
+      "file": "Picker/ElementHighlighter.cs",
+      "line": 151,
+      "symbol": "ParseColor",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 400,
+      "symbol": "OnColorButtonClicked",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 494,
+      "symbol": "TryParseHexColor",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 513,
+      "symbol": "ParseColorSafe",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 516,
+      "symbol": "GetContrastColor",
+      "type": "function"
+    }
+  ],
+  "system": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 255,
+      "symbol": "SystemInformation_VirtualScreenLeft",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 256,
+      "symbol": "SystemInformation_VirtualScreenTop",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 257,
+      "symbol": "SystemInformation_VirtualScreenWidth",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 258,
+      "symbol": "SystemInformation_VirtualScreenHeight",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 424,
+      "symbol": "RestoreSystemCursors",
+      "type": "function"
+    }
+  ],
+  "information": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 255,
+      "symbol": "SystemInformation_VirtualScreenLeft",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 256,
+      "symbol": "SystemInformation_VirtualScreenTop",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 257,
+      "symbol": "SystemInformation_VirtualScreenWidth",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 258,
+      "symbol": "SystemInformation_VirtualScreenHeight",
+      "type": "function"
+    }
+  ],
+  "virtual": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 255,
+      "symbol": "SystemInformation_VirtualScreenLeft",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 256,
+      "symbol": "SystemInformation_VirtualScreenTop",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 257,
+      "symbol": "SystemInformation_VirtualScreenWidth",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 258,
+      "symbol": "SystemInformation_VirtualScreenHeight",
+      "type": "function"
+    },
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 132,
+      "symbol": "ApplyVirtualScreenBounds",
+      "type": "function"
+    }
+  ],
+  "screen": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 255,
+      "symbol": "SystemInformation_VirtualScreenLeft",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 256,
+      "symbol": "SystemInformation_VirtualScreenTop",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 257,
+      "symbol": "SystemInformation_VirtualScreenWidth",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 258,
+      "symbol": "SystemInformation_VirtualScreenHeight",
+      "type": "function"
+    },
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 132,
+      "symbol": "ApplyVirtualScreenBounds",
+      "type": "function"
+    }
+  ],
+  "left": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 255,
+      "symbol": "SystemInformation_VirtualScreenLeft",
+      "type": "function"
+    }
+  ],
+  "top": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 256,
+      "symbol": "SystemInformation_VirtualScreenTop",
+      "type": "function"
+    }
+  ],
+  "width": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 257,
+      "symbol": "SystemInformation_VirtualScreenWidth",
+      "type": "function"
+    }
+  ],
+  "height": [
+    {
+      "file": "Inspection/ScreenshotCapture.cs",
+      "line": 258,
+      "symbol": "SystemInformation_VirtualScreenHeight",
+      "type": "function"
+    }
+  ],
+  "selector": [
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 34,
+      "symbol": "BuildSelector",
+      "type": "function"
+    }
+  ],
+  "fallback": [
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 66,
+      "symbol": "BuildFallbackSegment",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 170,
+      "symbol": "BuildFallbackSegment",
+      "type": "function"
+    }
+  ],
+  "segment": [
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 66,
+      "symbol": "BuildFallbackSegment",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 148,
+      "symbol": "BuildSegment",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 170,
+      "symbol": "BuildFallbackSegment",
+      "type": "function"
+    }
+  ],
+  "parent": [
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 78,
+      "symbol": "GetParentInfo",
+      "type": "function"
+    }
+  ],
+  "siblings": [
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 101,
+      "symbol": "GetSiblings",
+      "type": "function"
+    }
+  ],
+  "control": [
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 188,
+      "symbol": "GetControlTypeName",
+      "type": "function"
+    }
+  ],
+  "type": [
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 188,
+      "symbol": "GetControlTypeName",
+      "type": "function"
+    }
+  ],
+  "child": [
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 205,
+      "symbol": "GetChildIndex",
+      "type": "function"
+    }
+  ],
+  "index": [
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 205,
+      "symbol": "GetChildIndex",
+      "type": "function"
+    }
+  ],
+  "runtime": [
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 246,
+      "symbol": "RuntimeIdsEqual",
+      "type": "function"
+    }
+  ],
+  "ids": [
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 246,
+      "symbol": "RuntimeIdsEqual",
+      "type": "function"
+    }
+  ],
+  "equal": [
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 246,
+      "symbol": "RuntimeIdsEqual",
+      "type": "function"
+    }
+  ],
+  "prop": [
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 254,
+      "symbol": "GetStringProp",
+      "type": "function"
+    }
+  ],
+  "escape": [
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 270,
+      "symbol": "EscapeValue",
+      "type": "function"
+    }
+  ],
+  "value": [
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 270,
+      "symbol": "EscapeValue",
+      "type": "function"
+    }
+  ],
+  "truncate": [
+    {
+      "file": "Inspection/SelectorBuilder.cs",
+      "line": 276,
+      "symbol": "TruncateName",
+      "type": "function"
+    },
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 135,
+      "symbol": "TruncateName",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 710,
+      "symbol": "Truncate",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayMenuBuilder.cs",
+      "line": 277,
+      "symbol": "TruncateName",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayMenuBuilder.cs",
+      "line": 292,
+      "symbol": "TruncateQuery",
+      "type": "function"
+    }
+  ],
+  "highlighter": [
+    {
+      "file": "Picker/ElementHighlighter.cs",
+      "line": 20,
+      "symbol": "ElementHighlighter",
+      "type": "class"
+    },
+    {
+      "file": "Picker/ElementHighlighter.cs",
+      "line": 39,
+      "symbol": "ElementHighlighter",
+      "type": "function"
+    }
+  ],
+  "highlight": [
+    {
+      "file": "Picker/ElementHighlighter.cs",
+      "line": 57,
+      "symbol": "Highlight",
+      "type": "function"
+    }
+  ],
+  "create": [
+    {
+      "file": "Picker/ElementHighlighter.cs",
+      "line": 117,
+      "symbol": "CreateRectangle",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 441,
+      "symbol": "CreateSelectionRect",
+      "type": "function"
+    },
+    {
+      "file": "Tray/IconGenerator.cs",
+      "line": 30,
+      "symbol": "CreateIdleIcon",
+      "type": "function"
+    },
+    {
+      "file": "Tray/IconGenerator.cs",
+      "line": 42,
+      "symbol": "CreateActiveIcon",
+      "type": "function"
+    },
+    {
+      "file": "Tray/IconGenerator.cs",
+      "line": 54,
+      "symbol": "CreateIcon",
+      "type": "function"
+    }
+  ],
+  "apply": [
+    {
+      "file": "Picker/ElementHighlighter.cs",
+      "line": 134,
+      "symbol": "ApplyColors",
+      "type": "function"
+    },
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 132,
+      "symbol": "ApplyVirtualScreenBounds",
+      "type": "function"
+    },
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 253,
+      "symbol": "ApplyPlaceholder",
+      "type": "function"
+    }
+  ],
+  "colors": [
+    {
+      "file": "Picker/ElementHighlighter.cs",
+      "line": 134,
+      "symbol": "ApplyColors",
+      "type": "function"
+    }
+  ],
+  "picker": [
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 34,
+      "symbol": "ElementPicker",
+      "type": "class"
+    },
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 84,
+      "symbol": "ElementPicker",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 45,
+      "symbol": "SpotPicker",
+      "type": "class"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 84,
+      "symbol": "SpotPicker",
+      "type": "function"
+    }
+  ],
+  "pick": [
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 105,
+      "symbol": "PickAsync",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 96,
+      "symbol": "PickAsync",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 213,
+      "symbol": "OnPickElementClicked",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 395,
+      "symbol": "OnPickSpotClicked",
+      "type": "function"
+    }
+  ],
+  "async": [
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 105,
+      "symbol": "PickAsync",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 96,
+      "symbol": "PickAsync",
+      "type": "function"
+    }
+  ],
+  "dispatcher": [
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 119,
+      "symbol": "EnsureWpfDispatcher",
+      "type": "function"
+    },
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 164,
+      "symbol": "EnsureWpfDispatcher",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 108,
+      "symbol": "EnsureWpfDispatcher",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 136,
+      "symbol": "EnsureWpfDispatcher",
+      "type": "function"
+    }
+  ],
+  "poll": [
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 199,
+      "symbol": "OnPollTimerTick",
+      "type": "function"
+    }
+  ],
+  "timer": [
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 199,
+      "symbol": "OnPollTimerTick",
+      "type": "function"
+    }
+  ],
+  "tick": [
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 199,
+      "symbol": "OnPollTimerTick",
+      "type": "function"
+    }
+  ],
+  "install": [
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 246,
+      "symbol": "InstallHooks",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 162,
+      "symbol": "InstallHooks",
+      "type": "function"
+    }
+  ],
+  "hooks": [
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 246,
+      "symbol": "InstallHooks",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 162,
+      "symbol": "InstallHooks",
+      "type": "function"
+    }
+  ],
+  "mouse": [
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 280,
+      "symbol": "MouseHookCallback",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 192,
+      "symbol": "MouseHookCallback",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 760,
+      "symbol": "OnTrayIconMouseClick",
+      "type": "function"
+    }
+  ],
+  "hook": [
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 280,
+      "symbol": "MouseHookCallback",
+      "type": "function"
+    },
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 306,
+      "symbol": "KeyboardHookCallback",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 192,
+      "symbol": "MouseHookCallback",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 273,
+      "symbol": "KeyboardHookCallback",
+      "type": "function"
+    }
+  ],
+  "callback": [
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 280,
+      "symbol": "MouseHookCallback",
+      "type": "function"
+    },
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 306,
+      "symbol": "KeyboardHookCallback",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 192,
+      "symbol": "MouseHookCallback",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 273,
+      "symbol": "KeyboardHookCallback",
+      "type": "function"
+    }
+  ],
+  "keyboard": [
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 306,
+      "symbol": "KeyboardHookCallback",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 273,
+      "symbol": "KeyboardHookCallback",
+      "type": "function"
+    }
+  ],
+  "session": [
+    {
+      "file": "Picker/ElementPicker.cs",
+      "line": 329,
+      "symbol": "CleanupSession",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 357,
+      "symbol": "CleanupSession",
+      "type": "function"
+    },
+    {
+      "file": "Session/InspectionSession.cs",
+      "line": 16,
+      "symbol": "InspectionSession",
+      "type": "class"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 674,
+      "symbol": "OnSessionChanged",
+      "type": "function"
+    }
+  ],
+  "overlay": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 24,
+      "symbol": "OverlayWindow",
+      "type": "function"
+    },
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 45,
+      "symbol": "ShowOverlay",
+      "type": "function"
+    },
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 57,
+      "symbol": "HideOverlay",
+      "type": "function"
+    }
+  ],
+  "window": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 24,
+      "symbol": "OverlayWindow",
+      "type": "function"
+    }
+  ],
+  "show": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 45,
+      "symbol": "ShowOverlay",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 489,
+      "symbol": "ShowError",
+      "type": "function"
+    }
+  ],
+  "hide": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 57,
+      "symbol": "HideOverlay",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 343,
+      "symbol": "HideSelectionRect",
+      "type": "function"
+    }
+  ],
+  "set": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 70,
+      "symbol": "SetInteractive",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 407,
+      "symbol": "SetCrosshairCursor",
+      "type": "function"
+    },
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 120,
+      "symbol": "SetClipboardWithRetry",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsManager.cs",
+      "line": 122,
+      "symbol": "SetAutoStart",
+      "type": "function"
+    }
+  ],
+  "interactive": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 70,
+      "symbol": "SetInteractive",
+      "type": "function"
+    }
+  ],
+  "source": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 93,
+      "symbol": "OnSourceInitialized",
+      "type": "function"
+    }
+  ],
+  "initialized": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 93,
+      "symbol": "OnSourceInitialized",
+      "type": "function"
+    }
+  ],
+  "loaded": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 115,
+      "symbol": "OnLoaded",
+      "type": "function"
+    }
+  ],
+  "bounds": [
+    {
+      "file": "Picker/OverlayWindow.xaml.cs",
+      "line": 132,
+      "symbol": "ApplyVirtualScreenBounds",
+      "type": "function"
+    }
+  ],
+  "query": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 18,
+      "symbol": "QueryDialog",
+      "type": "class"
+    },
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 31,
+      "symbol": "QueryDialog",
+      "type": "function"
+    },
+    {
+      "file": "Session/InspectionSession.cs",
+      "line": 87,
+      "symbol": "UpdateQuery",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 559,
+      "symbol": "OnEditQueryClicked",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayMenuBuilder.cs",
+      "line": 292,
+      "symbol": "TruncateQuery",
+      "type": "function"
+    }
+  ],
+  "dialog": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 18,
+      "symbol": "QueryDialog",
+      "type": "class"
+    },
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 31,
+      "symbol": "QueryDialog",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 14,
+      "symbol": "SettingsDialog",
+      "type": "class"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 35,
+      "symbol": "SettingsDialog",
+      "type": "function"
+    }
+  ],
+  "auto": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 175,
+      "symbol": "AutoGrowTextBox",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 387,
+      "symbol": "OnAutoCopyChanged",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 392,
+      "symbol": "OnAutoCleanChanged",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsManager.cs",
+      "line": 122,
+      "symbol": "SetAutoStart",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsManager.cs",
+      "line": 159,
+      "symbol": "GetAutoStartEnabled",
+      "type": "function"
+    }
+  ],
+  "box": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 175,
+      "symbol": "AutoGrowTextBox",
+      "type": "function"
+    },
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 235,
+      "symbol": "OnTextBoxKeyDown",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 352,
+      "symbol": "OnHotkeyBoxKeyDown",
+      "type": "function"
+    }
+  ],
+  "cursor": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 211,
+      "symbol": "PositionNearCursor",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 407,
+      "symbol": "SetCrosshairCursor",
+      "type": "function"
+    }
+  ],
+  "key": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 235,
+      "symbol": "OnTextBoxKeyDown",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 352,
+      "symbol": "OnHotkeyBoxKeyDown",
+      "type": "function"
+    }
+  ],
+  "down": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 235,
+      "symbol": "OnTextBoxKeyDown",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 352,
+      "symbol": "OnHotkeyBoxKeyDown",
+      "type": "function"
+    }
+  ],
+  "load": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 304,
+      "symbol": "LoadAppIcon",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 522,
+      "symbol": "LoadAppIcon",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsManager.cs",
+      "line": 46,
+      "symbol": "Load",
+      "type": "function"
+    }
+  ],
+  "app": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 304,
+      "symbol": "LoadAppIcon",
+      "type": "function"
+    },
+    {
+      "file": "Settings/AppSettings.cs",
+      "line": 9,
+      "symbol": "AppSettings",
+      "type": "class"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 522,
+      "symbol": "LoadAppIcon",
+      "type": "function"
+    }
+  ],
+  "icon": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 304,
+      "symbol": "LoadAppIcon",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 522,
+      "symbol": "LoadAppIcon",
+      "type": "function"
+    },
+    {
+      "file": "Tray/IconGenerator.cs",
+      "line": 30,
+      "symbol": "CreateIdleIcon",
+      "type": "function"
+    },
+    {
+      "file": "Tray/IconGenerator.cs",
+      "line": 42,
+      "symbol": "CreateActiveIcon",
+      "type": "function"
+    },
+    {
+      "file": "Tray/IconGenerator.cs",
+      "line": 54,
+      "symbol": "CreateIcon",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 760,
+      "symbol": "OnTrayIconMouseClick",
+      "type": "function"
+    }
+  ],
+  "spot": [
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 24,
+      "symbol": "SpotResult",
+      "type": "class"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 45,
+      "symbol": "SpotPicker",
+      "type": "class"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 84,
+      "symbol": "SpotPicker",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 395,
+      "symbol": "OnPickSpotClicked",
+      "type": "function"
+    }
+  ],
+  "result": [
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 24,
+      "symbol": "SpotResult",
+      "type": "class"
+    }
+  ],
+  "update": [
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 296,
+      "symbol": "UpdateSelectionRect",
+      "type": "function"
+    },
+    {
+      "file": "Session/InspectionSession.cs",
+      "line": 87,
+      "symbol": "UpdateQuery",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 117,
+      "symbol": "UpdateElementCount",
+      "type": "function"
+    }
+  ],
+  "selection": [
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 296,
+      "symbol": "UpdateSelectionRect",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 343,
+      "symbol": "HideSelectionRect",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 441,
+      "symbol": "CreateSelectionRect",
+      "type": "function"
+    }
+  ],
+  "rect": [
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 296,
+      "symbol": "UpdateSelectionRect",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 343,
+      "symbol": "HideSelectionRect",
+      "type": "function"
+    },
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 441,
+      "symbol": "CreateSelectionRect",
+      "type": "function"
+    },
+    {
+      "file": "Tray/IconGenerator.cs",
+      "line": 144,
+      "symbol": "RoundedRect",
+      "type": "function"
+    }
+  ],
+  "crosshair": [
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 407,
+      "symbol": "SetCrosshairCursor",
+      "type": "function"
+    }
+  ],
+  "restore": [
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 424,
+      "symbol": "RestoreSystemCursors",
+      "type": "function"
+    }
+  ],
+  "cursors": [
+    {
+      "file": "Picker/SpotPicker.cs",
+      "line": 424,
+      "symbol": "RestoreSystemCursors",
+      "type": "function"
+    }
+  ],
+  "captured": [
+    {
+      "file": "Session/CapturedElement.cs",
+      "line": 14,
+      "symbol": "CapturedElement",
+      "type": "class"
+    }
+  ],
+  "export": [
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 24,
+      "symbol": "ExportToClipboard",
+      "type": "function"
+    },
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 51,
+      "symbol": "ExportSingleToClipboard",
+      "type": "function"
+    }
+  ],
+  "clipboard": [
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 24,
+      "symbol": "ExportToClipboard",
+      "type": "function"
+    },
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 51,
+      "symbol": "ExportSingleToClipboard",
+      "type": "function"
+    },
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 120,
+      "symbol": "SetClipboardWithRetry",
+      "type": "function"
+    }
+  ],
+  "single": [
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 51,
+      "symbol": "ExportSingleToClipboard",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 551,
+      "symbol": "OnCopySingleClicked",
+      "type": "function"
+    }
+  ],
+  "append": [
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 69,
+      "symbol": "AppendElement",
+      "type": "function"
+    }
+  ],
+  "with": [
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 120,
+      "symbol": "SetClipboardWithRetry",
+      "type": "function"
+    }
+  ],
+  "retry": [
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 120,
+      "symbol": "SetClipboardWithRetry",
+      "type": "function"
+    }
+  ],
+  "inspection": [
+    {
+      "file": "Session/InspectionSession.cs",
+      "line": 16,
+      "symbol": "InspectionSession",
+      "type": "class"
+    }
+  ],
+  "add": [
+    {
+      "file": "Session/InspectionSession.cs",
+      "line": 53,
+      "symbol": "Add",
+      "type": "function"
+    }
+  ],
+  "remove": [
+    {
+      "file": "Session/InspectionSession.cs",
+      "line": 65,
+      "symbol": "Remove",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 613,
+      "symbol": "OnRemoveClicked",
+      "type": "function"
+    }
+  ],
+  "delete": [
+    {
+      "file": "Session/InspectionSession.cs",
+      "line": 132,
+      "symbol": "DeleteScreenshot",
+      "type": "function"
+    }
+  ],
+  "screenshot": [
+    {
+      "file": "Session/InspectionSession.cs",
+      "line": 132,
+      "symbol": "DeleteScreenshot",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 713,
+      "symbol": "RunScreenshotCleanup",
+      "type": "function"
+    }
+  ],
+  "settings": [
+    {
+      "file": "Settings/AppSettings.cs",
+      "line": 9,
+      "symbol": "AppSettings",
+      "type": "class"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 14,
+      "symbol": "SettingsDialog",
+      "type": "class"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 35,
+      "symbol": "SettingsDialog",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 160,
+      "symbol": "OnSettingsClicked",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 186,
+      "symbol": "CopySettings",
+      "type": "function"
+    }
+  ],
+  "make": [
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 333,
+      "symbol": "MakeFieldLabel",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 340,
+      "symbol": "MakeHLine",
+      "type": "function"
+    }
+  ],
+  "field": [
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 333,
+      "symbol": "MakeFieldLabel",
+      "type": "function"
+    }
+  ],
+  "label": [
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 333,
+      "symbol": "MakeFieldLabel",
+      "type": "function"
+    }
+  ],
+  "line": [
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 340,
+      "symbol": "MakeHLine",
+      "type": "function"
+    }
+  ],
+  "browse": [
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 375,
+      "symbol": "OnBrowseClicked",
+      "type": "function"
+    }
+  ],
+  "clicked": [
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 375,
+      "symbol": "OnBrowseClicked",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 400,
+      "symbol": "OnColorButtonClicked",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 425,
+      "symbol": "OnSaveClicked",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 160,
+      "symbol": "OnSettingsClicked",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 213,
+      "symbol": "OnPickElementClicked",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 395,
+      "symbol": "OnPickSpotClicked",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 551,
+      "symbol": "OnCopySingleClicked",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 559,
+      "symbol": "OnEditQueryClicked",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 585,
+      "symbol": "OnViewShotClicked",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 613,
+      "symbol": "OnRemoveClicked",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 622,
+      "symbol": "OnClearAllClicked",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 627,
+      "symbol": "OnCopyAllClicked",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayMenuBuilder.cs",
+      "line": 268,
+      "symbol": "OnExitClicked",
+      "type": "function"
+    }
+  ],
+  "copy": [
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 387,
+      "symbol": "OnAutoCopyChanged",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 186,
+      "symbol": "CopySettings",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 551,
+      "symbol": "OnCopySingleClicked",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 627,
+      "symbol": "OnCopyAllClicked",
+      "type": "function"
+    }
+  ],
+  "changed": [
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 387,
+      "symbol": "OnAutoCopyChanged",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 392,
+      "symbol": "OnAutoCleanChanged",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 416,
+      "symbol": "OnOpacityChanged",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 674,
+      "symbol": "OnSessionChanged",
+      "type": "function"
+    }
+  ],
+  "clean": [
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 392,
+      "symbol": "OnAutoCleanChanged",
+      "type": "function"
+    }
+  ],
+  "button": [
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 400,
+      "symbol": "OnColorButtonClicked",
+      "type": "function"
+    }
+  ],
+  "opacity": [
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 416,
+      "symbol": "OnOpacityChanged",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 492,
+      "symbol": "FormatOpacity",
+      "type": "function"
+    }
+  ],
+  "save": [
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 425,
+      "symbol": "OnSaveClicked",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsManager.cs",
+      "line": 87,
+      "symbol": "Save",
+      "type": "function"
+    }
+  ],
+  "format": [
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 492,
+      "symbol": "FormatOpacity",
+      "type": "function"
+    }
+  ],
+  "hex": [
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 494,
+      "symbol": "TryParseHexColor",
+      "type": "function"
+    }
+  ],
+  "safe": [
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 513,
+      "symbol": "ParseColorSafe",
+      "type": "function"
+    }
+  ],
+  "contrast": [
+    {
+      "file": "Settings/SettingsDialog.cs",
+      "line": 516,
+      "symbol": "GetContrastColor",
+      "type": "function"
+    }
+  ],
+  "start": [
+    {
+      "file": "Settings/SettingsManager.cs",
+      "line": 122,
+      "symbol": "SetAutoStart",
+      "type": "function"
+    },
+    {
+      "file": "Settings/SettingsManager.cs",
+      "line": 159,
+      "symbol": "GetAutoStartEnabled",
+      "type": "function"
+    }
+  ],
+  "enabled": [
+    {
+      "file": "Settings/SettingsManager.cs",
+      "line": 159,
+      "symbol": "GetAutoStartEnabled",
+      "type": "function"
+    }
+  ],
+  "idle": [
+    {
+      "file": "Tray/IconGenerator.cs",
+      "line": 30,
+      "symbol": "CreateIdleIcon",
+      "type": "function"
+    }
+  ],
+  "active": [
+    {
+      "file": "Tray/IconGenerator.cs",
+      "line": 42,
+      "symbol": "CreateActiveIcon",
+      "type": "function"
+    }
+  ],
+  "rounded": [
+    {
+      "file": "Tray/IconGenerator.cs",
+      "line": 144,
+      "symbol": "RoundedRect",
+      "type": "function"
+    }
+  ],
+  "menu": [
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 138,
+      "symbol": "BuildMenu",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 746,
+      "symbol": "DisposeCurrentMenu",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayMenuBuilder.cs",
+      "line": 198,
+      "symbol": "BuildElementMenuItem",
+      "type": "function"
+    }
+  ],
+  "item": [
+    {
+      "file": "Tray/TrayMenuBuilder.cs",
+      "line": 198,
+      "symbol": "BuildElementMenuItem",
+      "type": "function"
+    }
+  ],
+  "exit": [
+    {
+      "file": "Tray/TrayMenuBuilder.cs",
+      "line": 268,
+      "symbol": "OnExitClicked",
+      "type": "function"
+    }
+  ],
+  "inspect": [
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 42,
+      "symbol": "InspectAtPoint",
+      "type": "function"
+    }
+  ],
+  "point": [
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 42,
+      "symbol": "InspectAtPoint",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 67,
+      "symbol": "WpfPoint",
+      "type": "function"
+    }
+  ],
+  "extract": [
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 74,
+      "symbol": "ExtractElementInfo",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 108,
+      "symbol": "ExtractElementInfo",
+      "type": "function"
+    }
+  ],
+  "property": [
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 184,
+      "symbol": "GetStringProperty",
+      "type": "function"
+    },
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 197,
+      "symbol": "GetBoolProperty",
+      "type": "function"
+    }
+  ],
+  "bool": [
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 197,
+      "symbol": "GetBoolProperty",
+      "type": "function"
+    }
+  ],
+  "from": [
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 215,
+      "symbol": "TryGetNameFromChildren",
+      "type": "function"
+    }
+  ],
+  "children": [
+    {
+      "file": "Inspection/AutomationInspector.cs",
+      "line": 215,
+      "symbol": "TryGetNameFromChildren",
+      "type": "function"
+    }
+  ],
+  "size": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 145,
+      "symbol": "Size",
+      "type": "function"
+    }
+  ],
+  "grow": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 175,
+      "symbol": "AutoGrowTextBox",
+      "type": "function"
+    }
+  ],
+  "text": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 175,
+      "symbol": "AutoGrowTextBox",
+      "type": "function"
+    },
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 235,
+      "symbol": "OnTextBoxKeyDown",
+      "type": "function"
+    },
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 294,
+      "symbol": "BuildHeaderText",
+      "type": "function"
+    }
+  ],
+  "position": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 211,
+      "symbol": "PositionNearCursor",
+      "type": "function"
+    }
+  ],
+  "near": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 211,
+      "symbol": "PositionNearCursor",
+      "type": "function"
+    }
+  ],
+  "placeholder": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 253,
+      "symbol": "ApplyPlaceholder",
+      "type": "function"
+    }
+  ],
+  "header": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 294,
+      "symbol": "BuildHeaderText",
+      "type": "function"
+    }
+  ],
+  "tray": [
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 27,
+      "symbol": "TrayApplication",
+      "type": "class"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 63,
+      "symbol": "TrayApplication",
+      "type": "function"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 760,
+      "symbol": "OnTrayIconMouseClick",
+      "type": "function"
+    }
+  ],
+  "application": [
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 27,
+      "symbol": "TrayApplication",
+      "type": "class"
+    },
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 63,
+      "symbol": "TrayApplication",
+      "type": "function"
+    }
+  ],
+  "count": [
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 117,
+      "symbol": "UpdateElementCount",
+      "type": "function"
+    }
+  ],
+  "edit": [
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 559,
+      "symbol": "OnEditQueryClicked",
+      "type": "function"
+    }
+  ],
+  "view": [
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 585,
+      "symbol": "OnViewShotClicked",
+      "type": "function"
+    }
+  ],
+  "shot": [
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 585,
+      "symbol": "OnViewShotClicked",
+      "type": "function"
+    }
+  ],
+  "pressed": [
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 651,
+      "symbol": "OnHotkeyPressed",
+      "type": "function"
+    }
+  ],
+  "find": [
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 685,
+      "symbol": "FindElement",
+      "type": "function"
+    }
+  ],
+  "description": [
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 696,
+      "symbol": "BuildElementDescription",
+      "type": "function"
+    }
+  ],
+  "run": [
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 713,
+      "symbol": "RunScreenshotCleanup",
+      "type": "function"
+    }
+  ],
+  "refresh": [
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 731,
+      "symbol": "RefreshTooltip",
+      "type": "function"
+    }
+  ],
+  "tooltip": [
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 731,
+      "symbol": "RefreshTooltip",
+      "type": "function"
+    }
+  ],
+  "current": [
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 746,
+      "symbol": "DisposeCurrentMenu",
+      "type": "function"
+    }
+  ],
+  "click": [
+    {
+      "file": "Tray/TrayApplication.cs",
+      "line": 760,
+      "symbol": "OnTrayIconMouseClick",
+      "type": "function"
+    }
+  ]
+}

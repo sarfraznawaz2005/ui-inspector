@@ -1,0 +1,17 @@
+{
+  "naming": {
+    "files": "PascalCase",
+    "functions": "PascalCase",
+    "classes": "PascalCase",
+    "constants": "SCREAMING_SNAKE_CASE or camelCase",
+    "confidence": 1
+  },
+  "patterns": {},
+  "test_patterns": {
+    "location": "unknown",
+    "runner": "unknown"
+  },
+  "file_structure": {
+    "detected_pattern": "flat"
+  }
+}
