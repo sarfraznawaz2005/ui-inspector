@@ -65,12 +65,14 @@ namespace UIInspector.Tray
             // Load user settings (or defaults if first run).
             _settings = SettingsManager.Load();
 
-            // Load the app icon from embedded resource.
+            // Load the tray icons from embedded resources.
+            //   logo.ico  — idle (no elements captured)
+            //   logo2.ico — active (one or more elements captured)
             var asm = System.Reflection.Assembly.GetExecutingAssembly();
-            using var stream = asm.GetManifestResourceStream("logo.ico");
-            var logoIcon = new Icon(stream!);
-            _idleIcon   = logoIcon;
-            _activeIcon = logoIcon;
+            using (var idleStream = asm.GetManifestResourceStream("logo.ico"))
+                _idleIcon = new Icon(idleStream!);
+            using (var activeStream = asm.GetManifestResourceStream("logo2.ico"))
+                _activeIcon = new Icon(activeStream!);
 
             // Create session and subscribe to changes so the menu stays current.
             _session = new InspectionSession();

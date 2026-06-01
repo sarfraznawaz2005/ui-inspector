@@ -42,5 +42,6 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="logo.ico" LogicalName="logo.ico" />
+    <EmbeddedResource Include="logo2.ico" LogicalName="logo2.ico" />
   </ItemGroup>
 </Project>

@@ -100,7 +100,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 661,
+      "line": 663,
       "symbol": "OnHotkeyPressed",
       "type": "function"
     }
@@ -150,13 +150,13 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 632,
+      "line": 634,
       "symbol": "OnClearAllClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 637,
+      "line": 639,
       "symbol": "OnCopyAllClicked",
       "type": "function"
     }
@@ -182,7 +182,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 756,
+      "line": 758,
       "symbol": "DisposeCurrentMenu",
       "type": "function"
     }
@@ -334,25 +334,25 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 117,
+      "line": 119,
       "symbol": "UpdateElementCount",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 213,
+      "line": 215,
       "symbol": "OnPickElementClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 695,
+      "line": 697,
       "symbol": "FindElement",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 706,
+      "line": 708,
       "symbol": "BuildElementDescription",
       "type": "function"
     },
@@ -552,7 +552,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 632,
+      "line": 634,
       "symbol": "OnClearAllClicked",
       "type": "function"
     }
@@ -614,7 +614,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 723,
+      "line": 725,
       "symbol": "RunScreenshotCleanup",
       "type": "function"
     }
@@ -658,13 +658,13 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 138,
+      "line": 140,
       "symbol": "BuildMenu",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 706,
+      "line": 708,
       "symbol": "BuildElementDescription",
       "type": "function"
     },
@@ -904,7 +904,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 720,
+      "line": 722,
       "symbol": "Truncate",
       "type": "function"
     },
@@ -1050,13 +1050,13 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 213,
+      "line": 215,
       "symbol": "OnPickElementClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 395,
+      "line": 397,
       "symbol": "OnPickSpotClicked",
       "type": "function"
     }
@@ -1168,7 +1168,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 770,
+      "line": 772,
       "symbol": "OnTrayIconMouseClick",
       "type": "function"
     }
@@ -1260,7 +1260,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 684,
+      "line": 686,
       "symbol": "OnSessionChanged",
       "type": "function"
     }
@@ -1332,7 +1332,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 569,
+      "line": 571,
       "symbol": "OnEditQueryClicked",
       "type": "function"
     },
@@ -1536,7 +1536,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 770,
+      "line": 772,
       "symbol": "OnTrayIconMouseClick",
       "type": "function"
     }
@@ -1556,7 +1556,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 117,
+      "line": 119,
       "symbol": "UpdateElementCount",
       "type": "function"
     }
@@ -1638,7 +1638,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 561,
+      "line": 563,
       "symbol": "OnCopySingleClicked",
       "type": "function"
     }
@@ -1692,7 +1692,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 623,
+      "line": 625,
       "symbol": "OnRemoveClicked",
       "type": "function"
     }
@@ -1714,7 +1714,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 723,
+      "line": 725,
       "symbol": "RunScreenshotCleanup",
       "type": "function"
     }
@@ -1740,13 +1740,13 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 160,
+      "line": 162,
       "symbol": "OnSettingsClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 186,
+      "line": 188,
       "symbol": "CopySettings",
       "type": "function"
     }
@@ -1818,55 +1818,55 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 160,
+      "line": 162,
       "symbol": "OnSettingsClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 213,
+      "line": 215,
       "symbol": "OnPickElementClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 395,
+      "line": 397,
       "symbol": "OnPickSpotClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 561,
+      "line": 563,
       "symbol": "OnCopySingleClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 569,
+      "line": 571,
       "symbol": "OnEditQueryClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 595,
+      "line": 597,
       "symbol": "OnViewShotClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 623,
+      "line": 625,
       "symbol": "OnRemoveClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 632,
+      "line": 634,
       "symbol": "OnClearAllClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 637,
+      "line": 639,
       "symbol": "OnCopyAllClicked",
       "type": "function"
     },
@@ -1886,19 +1886,19 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 186,
+      "line": 188,
       "symbol": "CopySettings",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 561,
+      "line": 563,
       "symbol": "OnCopySingleClicked",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 637,
+      "line": 639,
       "symbol": "OnCopyAllClicked",
       "type": "function"
     }
@@ -1924,7 +1924,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 684,
+      "line": 686,
       "symbol": "OnSessionChanged",
       "type": "function"
     }
@@ -2060,13 +2060,13 @@
   "menu": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 138,
+      "line": 140,
       "symbol": "BuildMenu",
       "type": "function"
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 756,
+      "line": 758,
       "symbol": "DisposeCurrentMenu",
       "type": "function"
     },
@@ -2614,7 +2614,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 395,
+      "line": 397,
       "symbol": "OnPickSpotClicked",
       "type": "function"
     }
@@ -2686,7 +2686,7 @@
     },
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 770,
+      "line": 772,
       "symbol": "OnTrayIconMouseClick",
       "type": "function"
     }
@@ -2708,7 +2708,7 @@
   "count": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 117,
+      "line": 119,
       "symbol": "UpdateElementCount",
       "type": "function"
     }
@@ -2716,7 +2716,7 @@
   "edit": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 569,
+      "line": 571,
       "symbol": "OnEditQueryClicked",
       "type": "function"
     }
@@ -2724,7 +2724,7 @@
   "view": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 595,
+      "line": 597,
       "symbol": "OnViewShotClicked",
       "type": "function"
     }
@@ -2732,7 +2732,7 @@
   "shot": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 595,
+      "line": 597,
       "symbol": "OnViewShotClicked",
       "type": "function"
     }
@@ -2740,7 +2740,7 @@
   "pressed": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 661,
+      "line": 663,
       "symbol": "OnHotkeyPressed",
       "type": "function"
     }
@@ -2748,7 +2748,7 @@
   "find": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 695,
+      "line": 697,
       "symbol": "FindElement",
       "type": "function"
     }
@@ -2756,7 +2756,7 @@
   "description": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 706,
+      "line": 708,
       "symbol": "BuildElementDescription",
       "type": "function"
     }
@@ -2764,7 +2764,7 @@
   "run": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 723,
+      "line": 725,
       "symbol": "RunScreenshotCleanup",
       "type": "function"
     }
@@ -2772,7 +2772,7 @@
   "refresh": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 741,
+      "line": 743,
       "symbol": "RefreshTooltip",
       "type": "function"
     }
@@ -2780,7 +2780,7 @@
   "tooltip": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 741,
+      "line": 743,
       "symbol": "RefreshTooltip",
       "type": "function"
     }
@@ -2788,7 +2788,7 @@
   "current": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 756,
+      "line": 758,
       "symbol": "DisposeCurrentMenu",
       "type": "function"
     }
@@ -2796,7 +2796,7 @@
   "click": [
     {
       "file": "Tray/TrayApplication.cs",
-      "line": 770,
+      "line": 772,
       "symbol": "OnTrayIconMouseClick",
       "type": "function"
     }
