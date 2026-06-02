@@ -2,18 +2,19 @@
 
 **Directory:** `Tray`
 **Files:** 3
-**Symbols:** 33
+**Symbols:** 34
 
 ## Files
 
 ### `Tray/IconGenerator.cs`
 
 **Functions:**
-- `CreateIdleIcon` (line 30)
-- `CreateActiveIcon` (line 42)
-- `CreateIcon` (line 54)
-- `Rectangle` (line 72)
-- `RoundedRect` (line 144)
+- `CreateIdleIcon` (line 31)
+- `CreateActiveIcon` (line 43)
+- `CreateBadgedIcon` (line 61)
+- `CreateIcon` (line 140)
+- `Rectangle` (line 158)
+- `RoundedRect` (line 230)
 
 
 ### `Tray/TrayApplication.cs`
@@ -22,28 +23,28 @@
 - `TrayApplication` (line 27)
 
 **Functions:**
-- `TrayApplication` (line 63)
-- `UpdateElementCount` (line 119)
-- `BuildMenu` (line 140)
-- `OnSettingsClicked` (line 162)
-- `CopySettings` (line 188)
-- `OnPickElementClicked` (line 215)
-- `OnPickSpotClicked` (line 397)
-- `OnCopySingleClicked` (line 563)
-- `OnEditQueryClicked` (line 571)
-- `OnViewShotClicked` (line 597)
-- `OnRemoveClicked` (line 625)
-- `OnClearAllClicked` (line 634)
-- `OnCopyAllClicked` (line 639)
-- `OnHotkeyPressed` (line 663)
-- `OnSessionChanged` (line 686)
-- `FindElement` (line 697)
-- `BuildElementDescription` (line 708)
-- `Truncate` (line 722)
-- `RunScreenshotCleanup` (line 725)
-- `RefreshTooltip` (line 743)
-- `DisposeCurrentMenu` (line 758)
-- `OnTrayIconMouseClick` (line 772)
+- `TrayApplication` (line 64)
+- `UpdateElementCount` (line 116)
+- `BuildMenu` (line 152)
+- `OnSettingsClicked` (line 174)
+- `CopySettings` (line 200)
+- `OnPickElementClicked` (line 227)
+- `OnPickSpotClicked` (line 409)
+- `OnCopySingleClicked` (line 575)
+- `OnEditQueryClicked` (line 583)
+- `OnViewShotClicked` (line 609)
+- `OnRemoveClicked` (line 637)
+- `OnClearAllClicked` (line 646)
+- `OnCopyAllClicked` (line 651)
+- `OnHotkeyPressed` (line 675)
+- `OnSessionChanged` (line 698)
+- `FindElement` (line 709)
+- `BuildElementDescription` (line 720)
+- `Truncate` (line 734)
+- `RunScreenshotCleanup` (line 737)
+- `RefreshTooltip` (line 755)
+- `DisposeCurrentMenu` (line 770)
+- `OnTrayIconMouseClick` (line 784)
 
 
 ### `Tray/TrayMenuBuilder.cs`

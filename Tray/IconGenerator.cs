@@ -2,6 +2,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using System.Drawing.Text;
 using System.Windows.Forms;
 
 namespace UIInspector.Tray
@@ -46,6 +47,91 @@ namespace UIInspector.Tray
                 glassColor:            Color.FromArgb(220, 255, 255, 255),   // white (semi)
                 handleColor:           Color.FromArgb(255, 199, 210, 254),   // indigo-200
                 showActiveDot:         true);
+
+        /// <summary>
+        /// Builds a tray icon that shows the captured-element <paramref name="count"/>
+        /// as a large centred number, with the <paramref name="baseIcon"/> shrunk to a
+        /// small mark in the top-left corner. The big number is what stays legible at
+        /// the 16px tray size; the logo is kept only for brand recognition.
+        ///
+        /// The digits are rendered as a stroked glyph path (dark outline + white fill)
+        /// so they read clearly over the logo and any background. Renders at 32×32 —
+        /// Windows downscales for the tray. The caller disposes the returned icon.
+        /// </summary>
+        public static Icon CreateBadgedIcon(Icon baseIcon, int count)
+        {
+            // Render surface larger than the 16px tray slot so the number stays
+            // crisp after the OS scales it down.
+            const int size = 32;
+
+            using var bitmap = new Bitmap(size, size, PixelFormat.Format32bppArgb);
+            using var g = Graphics.FromImage(bitmap);
+
+            g.SmoothingMode     = SmoothingMode.AntiAlias;
+            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            g.PixelOffsetMode   = PixelOffsetMode.HighQuality;
+            g.TextRenderingHint = TextRenderingHint.AntiAlias;
+
+            // -----------------------------------------------------------------
+            // Logo — shrunk to a small mark in the top-left corner
+            // -----------------------------------------------------------------
+            using (var baseBitmap = baseIcon.ToBitmap())
+            {
+                g.DrawImage(baseBitmap, new Rectangle(0, 0, 13, 13));
+            }
+
+            // -----------------------------------------------------------------
+            // Count — large, centred, drawn as an outlined glyph path
+            // -----------------------------------------------------------------
+            string text = count > 99 ? "99+" : count.ToString();
+
+            // Shrink the em size as digit count grows so it always fits the tile.
+            float emSize = text.Length switch
+            {
+                1 => 30f,
+                2 => 22f,
+                _ => 16f,
+            };
+
+            using var fontFamily = new FontFamily("Segoe UI");
+            using var path = new GraphicsPath();
+
+            // Emit the glyphs at the origin (no layout rectangle — a rectangle plus
+            // GenericTypographic's LineLimit flag silently drops lines taller than
+            // the box), then centre by the path's actual bounds.
+            path.AddString(
+                text,
+                fontFamily,
+                (int)FontStyle.Bold,
+                emSize,
+                PointF.Empty,
+                StringFormat.GenericTypographic);
+
+            RectangleF bounds = path.GetBounds();
+            using (var center = new Matrix())
+            {
+                center.Translate(
+                    (size - bounds.Width)  / 2f - bounds.X,
+                    (size - bounds.Height) / 2f - bounds.Y);
+                path.Transform(center);
+            }
+
+            // White outline first (rounded joins avoid spiky corners) so the blue
+            // digits stay readable on a light taskbar, blue fill on top.
+            using (var outline = new Pen(Color.FromArgb(235, 255, 255, 255), 3.5f) { LineJoin = LineJoin.Round })
+                g.DrawPath(outline, path);
+            using (var fill = new SolidBrush(Color.FromArgb(255, 37, 99, 235)))   // blue-600
+                g.FillPath(fill, path);
+
+            // -----------------------------------------------------------------
+            // Convert Bitmap → Icon via HICON handle
+            // -----------------------------------------------------------------
+            IntPtr hIcon = bitmap.GetHicon();
+            Icon icon = (Icon)Icon.FromHandle(hIcon).Clone();
+            NativeMethods.DestroyIcon(hIcon);
+
+            return icon;
+        }
 
         // =====================================================================
         // Core rendering

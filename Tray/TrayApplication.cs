@@ -41,10 +41,11 @@ namespace UIInspector.Tray
         // Global hotkey manager — receives WM_HOTKEY and fires HotkeyPressed.
         private readonly GlobalHotkeyManager _hotkeyManager;
 
-        // Generated icons — stored so we can swap them (idle ↔ active) and
-        // dispose them properly when the application exits.
-        private Icon _idleIcon;
-        private Icon _activeIcon;
+        // The base logo icon (shown when no elements are captured) and the
+        // generated badge icon (base logo + count pill, regenerated on each
+        // count change). Both are disposed when the application exits.
+        private readonly Icon _baseIcon;
+        private Icon? _badgeIcon;
 
         // Track how many elements are currently captured.
         // Kept as a field so RefreshTooltip/UpdateElementCount can use it cheaply.
@@ -65,14 +66,10 @@ namespace UIInspector.Tray
             // Load user settings (or defaults if first run).
             _settings = SettingsManager.Load();
 
-            // Load the tray icons from embedded resources.
-            //   logo.ico  — idle (no elements captured)
-            //   logo2.ico — active (one or more elements captured)
+            // Load the base logo icon from the embedded resource.
             var asm = System.Reflection.Assembly.GetExecutingAssembly();
-            using (var idleStream = asm.GetManifestResourceStream("logo.ico"))
-                _idleIcon = new Icon(idleStream!);
-            using (var activeStream = asm.GetManifestResourceStream("logo2.ico"))
-                _activeIcon = new Icon(activeStream!);
+            using (var stream = asm.GetManifestResourceStream("logo.ico"))
+                _baseIcon = new Icon(stream!);
 
             // Create session and subscribe to changes so the menu stays current.
             _session = new InspectionSession();
@@ -89,7 +86,7 @@ namespace UIInspector.Tray
             // Build the NotifyIcon.
             _notifyIcon = new NotifyIcon
             {
-                Icon             = _idleIcon,
+                Icon             = _baseIcon,
                 Text             = "UI Inspector",
                 Visible          = true,
                 ContextMenuStrip = BuildMenu(),
@@ -120,8 +117,23 @@ namespace UIInspector.Tray
         {
             _capturedElementCount = count;
 
-            // Swap icon to reflect whether any elements are captured.
-            _notifyIcon.Icon = count > 0 ? _activeIcon : _idleIcon;
+            // Show the base logo when empty; otherwise overlay a count pill on
+            // top of the same logo. Regenerate the badge each time the count
+            // changes and dispose the previous one to avoid leaking GDI handles.
+            Icon? oldBadge = _badgeIcon;
+
+            if (count > 0)
+            {
+                _badgeIcon = IconGenerator.CreateBadgedIcon(_baseIcon, count);
+                _notifyIcon.Icon = _badgeIcon;
+            }
+            else
+            {
+                _badgeIcon = null;
+                _notifyIcon.Icon = _baseIcon;
+            }
+
+            oldBadge?.Dispose();
 
             // Rebuild the menu so counts and enabled-states are current.
             DisposeCurrentMenu();
@@ -814,9 +826,8 @@ namespace UIInspector.Tray
 
                 _picker.Dispose();
 
-                _idleIcon.Dispose();
-                if (_activeIcon != _idleIcon)
-                    _activeIcon.Dispose();
+                _baseIcon.Dispose();
+                _badgeIcon?.Dispose();
             }
 
             base.Dispose(disposing);
