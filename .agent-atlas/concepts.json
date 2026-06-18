@@ -328,7 +328,7 @@
     },
     {
       "file": "Session/ClipboardExporter.cs",
-      "line": 69,
+      "line": 72,
       "symbol": "AppendElement",
       "type": "function"
     },
@@ -498,7 +498,7 @@
     },
     {
       "file": "Session/ClipboardExporter.cs",
-      "line": 135,
+      "line": 139,
       "symbol": "TruncateName",
       "type": "function"
     },
@@ -898,7 +898,7 @@
     },
     {
       "file": "Session/ClipboardExporter.cs",
-      "line": 135,
+      "line": 139,
       "symbol": "TruncateName",
       "type": "function"
     },
@@ -1306,7 +1306,7 @@
     },
     {
       "file": "Session/ClipboardExporter.cs",
-      "line": 120,
+      "line": 124,
       "symbol": "SetClipboardWithRetry",
       "type": "function"
     },
@@ -1607,44 +1607,10 @@
       "type": "class"
     }
   ],
-  "export": [
-    {
-      "file": "Session/ClipboardExporter.cs",
-      "line": 24,
-      "symbol": "ExportToClipboard",
-      "type": "function"
-    },
-    {
-      "file": "Session/ClipboardExporter.cs",
-      "line": 51,
-      "symbol": "ExportSingleToClipboard",
-      "type": "function"
-    }
-  ],
-  "clipboard": [
-    {
-      "file": "Session/ClipboardExporter.cs",
-      "line": 24,
-      "symbol": "ExportToClipboard",
-      "type": "function"
-    },
-    {
-      "file": "Session/ClipboardExporter.cs",
-      "line": 51,
-      "symbol": "ExportSingleToClipboard",
-      "type": "function"
-    },
-    {
-      "file": "Session/ClipboardExporter.cs",
-      "line": 120,
-      "symbol": "SetClipboardWithRetry",
-      "type": "function"
-    }
-  ],
   "single": [
     {
       "file": "Session/ClipboardExporter.cs",
-      "line": 51,
+      "line": 54,
       "symbol": "ExportSingleToClipboard",
       "type": "function"
     },
@@ -1652,30 +1618,6 @@
       "file": "Tray/TrayApplication.cs",
       "line": 575,
       "symbol": "OnCopySingleClicked",
-      "type": "function"
-    }
-  ],
-  "append": [
-    {
-      "file": "Session/ClipboardExporter.cs",
-      "line": 69,
-      "symbol": "AppendElement",
-      "type": "function"
-    }
-  ],
-  "with": [
-    {
-      "file": "Session/ClipboardExporter.cs",
-      "line": 120,
-      "symbol": "SetClipboardWithRetry",
-      "type": "function"
-    }
-  ],
-  "retry": [
-    {
-      "file": "Session/ClipboardExporter.cs",
-      "line": 120,
-      "symbol": "SetClipboardWithRetry",
       "type": "function"
     }
   ],
@@ -2818,6 +2760,64 @@
       "file": "Tray/TrayApplication.cs",
       "line": 784,
       "symbol": "OnTrayIconMouseClick",
+      "type": "function"
+    }
+  ],
+  "export": [
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 24,
+      "symbol": "ExportToClipboard",
+      "type": "function"
+    },
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 54,
+      "symbol": "ExportSingleToClipboard",
+      "type": "function"
+    }
+  ],
+  "clipboard": [
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 24,
+      "symbol": "ExportToClipboard",
+      "type": "function"
+    },
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 54,
+      "symbol": "ExportSingleToClipboard",
+      "type": "function"
+    },
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 124,
+      "symbol": "SetClipboardWithRetry",
+      "type": "function"
+    }
+  ],
+  "append": [
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 72,
+      "symbol": "AppendElement",
+      "type": "function"
+    }
+  ],
+  "with": [
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 124,
+      "symbol": "SetClipboardWithRetry",
+      "type": "function"
+    }
+  ],
+  "retry": [
+    {
+      "file": "Session/ClipboardExporter.cs",
+      "line": 124,
+      "symbol": "SetClipboardWithRetry",
       "type": "function"
     }
   ]

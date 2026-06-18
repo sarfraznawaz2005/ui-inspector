@@ -16,10 +16,10 @@
 
 **Functions:**
 - `ExportToClipboard` (line 24)
-- `ExportSingleToClipboard` (line 51)
-- `AppendElement` (line 69)
-- `SetClipboardWithRetry` (line 120)
-- `TruncateName` (line 135)
+- `ExportSingleToClipboard` (line 54)
+- `AppendElement` (line 72)
+- `SetClipboardWithRetry` (line 124)
+- `TruncateName` (line 139)
 
 
 ### `Session/InspectionSession.cs`

@@ -38,8 +38,11 @@ namespace UIInspector.Session
                 $"**App**: {processNames} | **Captured**: {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
             sb.AppendLine();
 
+            // Number the "User Query" labels only when there is more than one
+            // element, so each query lines up with its "## Element N" header.
+            bool numberQueries = session.Count > 1;
             foreach (var elem in session.Elements)
-                AppendElement(sb, elem);
+                AppendElement(sb, elem, numberQueries);
 
             SetClipboardWithRetry(sb.ToString());
             return session.Count;
@@ -57,7 +60,7 @@ namespace UIInspector.Session
                 $"**App**: {element.ProcessName} | **Captured**: {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
             sb.AppendLine();
 
-            AppendElement(sb, element);
+            AppendElement(sb, element, numberQuery: false);
 
             SetClipboardWithRetry(sb.ToString());
         }
@@ -66,7 +69,7 @@ namespace UIInspector.Session
         // Private — element formatting
         // =====================================================================
 
-        private static void AppendElement(StringBuilder sb, CapturedElement elem)
+        private static void AppendElement(StringBuilder sb, CapturedElement elem, bool numberQuery)
         {
             string displayName = TruncateName(elem.Name);
 
@@ -105,10 +108,11 @@ namespace UIInspector.Session
             sb.AppendLine("---");
             sb.AppendLine();
 
+            string queryLabel = numberQuery ? $"User Query {elem.Index}" : "User Query";
             if (!string.IsNullOrEmpty(elem.Query))
-                sb.AppendLine($"User Query: See screenshot `{elem.ScreenshotPath}` - {elem.Query}");
+                sb.AppendLine($"{queryLabel}: See screenshot `{elem.ScreenshotPath}` - {elem.Query}");
             else
-                sb.AppendLine($"User Query: See screenshot `{elem.ScreenshotPath}`");
+                sb.AppendLine($"{queryLabel}: See screenshot `{elem.ScreenshotPath}`");
 
             sb.AppendLine();
         }
