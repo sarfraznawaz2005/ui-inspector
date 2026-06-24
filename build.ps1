@@ -26,6 +26,10 @@ if ($LASTEXITCODE -eq 0) {
     if ($exe) {
         $sizeMB = [math]::Round($exe.Length / 1MB, 1)
         Write-Host "Build successful! Output: $($exe.FullName) ($sizeMB MB)" -ForegroundColor Green
+
+        $rootExe = Join-Path $PSScriptRoot "UIInspector.exe"
+        Copy-Item $exe.FullName $rootExe -Force
+        Write-Host "Copied EXE to repo root: $rootExe" -ForegroundColor Green
     }
 } else {
     Write-Host "Build failed!" -ForegroundColor Red
