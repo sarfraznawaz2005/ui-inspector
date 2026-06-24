@@ -55,17 +55,17 @@
 ### `Picker/QueryDialog.cs`
 
 **Classes:**
-- `QueryDialog` (line 18)
+- `QueryDialog` (line 19)
 
 **Functions:**
-- `QueryDialog` (line 31)
-- `Size` (line 145)
-- `AutoGrowTextBox` (line 175)
-- `PositionNearCursor` (line 211)
-- `OnTextBoxKeyDown` (line 235)
-- `ApplyPlaceholder` (line 253)
-- `BuildHeaderText` (line 294)
-- `LoadAppIcon` (line 304)
+- `QueryDialog` (line 32)
+- `Size` (line 146)
+- `AutoGrowTextBox` (line 176)
+- `CenterOnScreen` (line 216)
+- `OnTextBoxKeyDown` (line 257)
+- `ApplyPlaceholder` (line 275)
+- `BuildHeaderText` (line 316)
+- `LoadAppIcon` (line 326)
 
 
 ### `Picker/SpotPicker.cs`
@@ -84,14 +84,14 @@
 - `MouseHookCallback` (line 222)
 - `if` (line 237)
 - `if` (line 244)
-- `if` (line 291)
-- `KeyboardHookCallback` (line 303)
-- `UpdateSelectionRect` (line 326)
-- `HideSelectionRect` (line 373)
-- `CleanupSession` (line 387)
-- `SetCrosshairCursor` (line 437)
-- `RestoreSystemCursors` (line 454)
-- `CreateSelectionRect` (line 471)
+- `if` (line 302)
+- `KeyboardHookCallback` (line 314)
+- `UpdateSelectionRect` (line 337)
+- `HideSelectionRect` (line 384)
+- `CleanupSession` (line 398)
+- `SetCrosshairCursor` (line 448)
+- `RestoreSystemCursors` (line 465)
+- `CreateSelectionRect` (line 482)
 
 
 ## Change Recipe

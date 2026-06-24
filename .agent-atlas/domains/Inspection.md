@@ -2,7 +2,7 @@
 
 **Directory:** `Inspection`
 **Files:** 5
-**Symbols:** 37
+**Symbols:** 36
 
 ## Files
 
@@ -10,13 +10,12 @@
 
 **Functions:**
 - `InspectAtPoint` (line 42)
-- `WpfPoint` (line 67)
-- `ExtractElementInfo` (line 74)
-- `ExtractElementInfo` (line 108)
-- `GetStringProperty` (line 184)
-- `GetBoolProperty` (line 197)
-- `TryGetNameFromChildren` (line 215)
-- `GetProcessName` (line 258)
+- `WpfPoint` (line 62)
+- `ExtractElementInfo` (line 137)
+- `GetStringProperty` (line 213)
+- `GetBoolProperty` (line 226)
+- `TryGetNameFromChildren` (line 244)
+- `GetProcessName` (line 287)
 
 
 ### `Inspection/ElementInfo.cs`

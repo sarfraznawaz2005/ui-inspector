@@ -52,45 +52,74 @@ namespace UIInspector.Inspection
                     return null;
             }
 
-            using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(2));
-            CancellationToken token = cts.Token;
-
-            try
-            {
-                ElementInfo? result = await Task.Run(() =>
+            // AutomationElement.FromPoint is a synchronous, non-cancellable COM call.
+            // RunWithTimeout runs it on a background thread and stops waiting if it
+            // wedges against an unresponsive target, returning null instead of hanging.
+            return await RunWithTimeout(
+                () =>
                 {
-                    // Check for cancellation before starting the potentially
-                    // blocking UIA call.
-                    token.ThrowIfCancellationRequested();
-
                     AutomationElement? element = AutomationElement.FromPoint(
                         new WpfPoint(screenPoint.X, screenPoint.Y));
 
-                    token.ThrowIfCancellationRequested();
+                    return element == null ? null : ExtractElementInfo(element);
+                },
+                fallback: null,
+                timeout: TimeSpan.FromSeconds(2),
+                label: $"InspectAtPoint{screenPoint}");
+        }
 
-                    if (element == null)
-                        return null;
-
-                    return ExtractElementInfo(element);
-
-                }, token);
-
-                return result;
-            }
-            catch (ElementNotAvailableException ex)
+        /// <summary>
+        /// Runs a synchronous, potentially-blocking UI Automation operation on a
+        /// background thread and races it against <paramref name="timeout"/>.
+        ///
+        /// UIA calls (tree walks, property reads, <c>FromPoint</c>) are blocking COM
+        /// calls that ignore <see cref="CancellationToken"/>s, so once one is in
+        /// progress it cannot be interrupted. On a slow or memory-pressured machine,
+        /// or against an unresponsive target process, such a call can block for a long
+        /// time. The only way to guarantee the caller is never wedged is to stop
+        /// waiting on it: if the work does not finish in time it is abandoned (left to
+        /// complete or die with the process) and <paramref name="fallback"/> is returned.
+        /// </summary>
+        public static async Task<T> RunWithTimeout<T>(
+            Func<T> work, T fallback, TimeSpan timeout, string label)
+        {
+            Task<T> task;
+            try
             {
-                Debug.WriteLine($"[AutomationInspector] Element not available at {screenPoint}: {ex.Message}");
-                return null;
-            }
-            catch (OperationCanceledException)
-            {
-                Debug.WriteLine($"[AutomationInspector] UIA call timed out at {screenPoint}.");
-                return null;
+                task = Task.Run(work);
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"[AutomationInspector] Unexpected error at {screenPoint}: {ex}");
-                return null;
+                // Task.Run itself can throw under severe resource pressure (e.g. the
+                // thread pool cannot start a thread when low on memory).
+                Debug.WriteLine($"[AutomationInspector] {label} could not start: {ex.Message}");
+                return fallback;
+            }
+
+            Task finished = await Task.WhenAny(task, Task.Delay(timeout));
+
+            if (finished != task)
+            {
+                // Observe the abandoned task's eventual exception so it is not raised
+                // as an unobserved task exception later.
+                _ = task.ContinueWith(
+                    t => { _ = t.Exception; },
+                    CancellationToken.None,
+                    TaskContinuationOptions.OnlyOnFaulted,
+                    TaskScheduler.Default);
+
+                Debug.WriteLine($"[AutomationInspector] {label} timed out after {timeout.TotalSeconds:0.#}s; using fallback.");
+                return fallback;
+            }
+
+            try
+            {
+                return await task;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"[AutomationInspector] {label} failed: {ex.Message}");
+                return fallback;
             }
         }
 

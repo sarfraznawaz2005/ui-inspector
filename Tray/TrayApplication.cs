@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Windows.Automation;
 using System.Windows.Forms;
 using UIInspector.Hotkeys;
 using UIInspector.Inspection;
@@ -249,43 +250,30 @@ namespace UIInspector.Tray
                 }
 
                 // ----------------------------------------------------------
-                // Step 2: Build selector
+                // Steps 2-4: Selector / parent / siblings.
+                // Each is an unbounded UIA tree walk, so run it through a timeout
+                // guard — on a slow or unresponsive target these must never wedge
+                // the UI thread between the click and the query dialog.
                 // ----------------------------------------------------------
-                string selector = string.Empty;
-                try
-                {
-                    selector = SelectorBuilder.BuildSelector(elementInfo.RawElement);
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine($"[TrayApplication] BuildSelector failed: {ex.Message}");
-                }
+                AutomationElement raw = elementInfo.RawElement;
 
-                // ----------------------------------------------------------
-                // Step 3: Get parent info
-                // ----------------------------------------------------------
-                ElementInfo? parentInfo = null;
-                try
-                {
-                    parentInfo = SelectorBuilder.GetParentInfo(elementInfo.RawElement);
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine($"[TrayApplication] GetParentInfo failed: {ex.Message}");
-                }
+                string selector = await AutomationInspector.RunWithTimeout(
+                    () => SelectorBuilder.BuildSelector(raw),
+                    fallback: string.Empty,
+                    timeout: TimeSpan.FromSeconds(2),
+                    label: "BuildSelector");
 
-                // ----------------------------------------------------------
-                // Step 4: Get siblings
-                // ----------------------------------------------------------
-                List<ElementInfo> siblings = new();
-                try
-                {
-                    siblings = SelectorBuilder.GetSiblings(elementInfo.RawElement);
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine($"[TrayApplication] GetSiblings failed: {ex.Message}");
-                }
+                ElementInfo? parentInfo = await AutomationInspector.RunWithTimeout(
+                    () => SelectorBuilder.GetParentInfo(raw),
+                    fallback: (ElementInfo?)null,
+                    timeout: TimeSpan.FromSeconds(2),
+                    label: "GetParentInfo");
+
+                List<ElementInfo> siblings = await AutomationInspector.RunWithTimeout(
+                    () => SelectorBuilder.GetSiblings(raw),
+                    fallback: new List<ElementInfo>(),
+                    timeout: TimeSpan.FromSeconds(2),
+                    label: "GetSiblings");
 
                 // ----------------------------------------------------------
                 // Step 5: Detect process type
@@ -441,14 +429,27 @@ namespace UIInspector.Tray
 
                 if (elementInfo != null)
                 {
-                    try { selector = SelectorBuilder.BuildSelector(elementInfo.RawElement); }
-                    catch (Exception ex) { Debug.WriteLine($"[TrayApplication] Spot BuildSelector failed: {ex.Message}"); }
+                    // Same timeout guard as the element-pick flow — unbounded UIA
+                    // tree walks must never stall the path to the query dialog.
+                    AutomationElement raw = elementInfo.RawElement;
 
-                    try { parentInfo = SelectorBuilder.GetParentInfo(elementInfo.RawElement); }
-                    catch (Exception ex) { Debug.WriteLine($"[TrayApplication] Spot GetParentInfo failed: {ex.Message}"); }
+                    selector = await AutomationInspector.RunWithTimeout(
+                        () => SelectorBuilder.BuildSelector(raw),
+                        fallback: string.Empty,
+                        timeout: TimeSpan.FromSeconds(2),
+                        label: "Spot BuildSelector");
 
-                    try { siblings = SelectorBuilder.GetSiblings(elementInfo.RawElement); }
-                    catch (Exception ex) { Debug.WriteLine($"[TrayApplication] Spot GetSiblings failed: {ex.Message}"); }
+                    parentInfo = await AutomationInspector.RunWithTimeout(
+                        () => SelectorBuilder.GetParentInfo(raw),
+                        fallback: (ElementInfo?)null,
+                        timeout: TimeSpan.FromSeconds(2),
+                        label: "Spot GetParentInfo");
+
+                    siblings = await AutomationInspector.RunWithTimeout(
+                        () => SelectorBuilder.GetSiblings(raw),
+                        fallback: new List<ElementInfo>(),
+                        timeout: TimeSpan.FromSeconds(2),
+                        label: "Spot GetSiblings");
                 }
 
                 // ----------------------------------------------------------

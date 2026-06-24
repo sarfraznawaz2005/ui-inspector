@@ -271,7 +271,18 @@ namespace UIInspector.Picker
                             ElementInfo? detected = null;
                             try
                             {
-                                detected = await AutomationInspector.InspectAtPoint(center);
+                                // Defence in depth: InspectAtPoint already enforces its
+                                // own timeout, but a region capture must never depend on
+                                // it. Race it against an outer guard so we always resolve
+                                // the result, close the overlay, and reach the query
+                                // dialog — at worst with the drawn region only.
+                                Task<ElementInfo?> inspect = AutomationInspector.InspectAtPoint(center);
+                                Task finished = await Task.WhenAny(inspect, Task.Delay(TimeSpan.FromSeconds(3)));
+
+                                if (finished == inspect)
+                                    detected = await inspect;
+                                else
+                                    Debug.WriteLine("[SpotPicker] Inspection exceeded fallback timeout; capturing region only.");
                             }
                             catch (Exception ex)
                             {

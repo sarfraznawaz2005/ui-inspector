@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using UIInspector.Interop;
 
 namespace UIInspector.Picker
 {
@@ -39,7 +40,7 @@ namespace UIInspector.Picker
             MaximizeBox      = false;
             MinimizeBox      = false;
             ShowInTaskbar    = false;
-            TopMost          = true;
+            TopMost          = false;
 
             AutoScaleMode       = AutoScaleMode.Font;
             AutoScaleDimensions = new SizeF(7F, 15F); // Segoe UI 9pt at 96 DPI
@@ -164,7 +165,7 @@ namespace UIInspector.Picker
             if (!string.IsNullOrEmpty(existingQuery))
                 AutoGrowTextBox(0, 24, 120, 16, 32);
 
-            PositionNearCursor();
+            CenterOnScreen();
             ActiveControl = _queryTextBox;
         }
 
@@ -208,24 +209,45 @@ namespace UIInspector.Picker
         // Positioning
         // =====================================================================
 
-        private void PositionNearCursor()
+        /// <summary>
+        /// Centers the dialog within the working area of the screen the cursor is
+        /// currently on, so it always opens centred on the monitor the user is using.
+        /// </summary>
+        private void CenterOnScreen()
         {
-            Point cursor = Cursor.Position;
-            int x = cursor.X + 16;
-            int y = cursor.Y + 16;
-
-            Screen screen = Screen.FromPoint(cursor);
+            Screen screen = Screen.FromPoint(Cursor.Position);
             Rectangle workArea = screen.WorkingArea;
 
-            if (x + Width > workArea.Right)
-                x = workArea.Right - Width - 4;
-            if (y + Height > workArea.Bottom)
-                y = workArea.Bottom - Height - 4;
+            int x = workArea.Left + (workArea.Width  - Width)  / 2;
+            int y = workArea.Top  + (workArea.Height - Height) / 2;
 
+            // Guard against a dialog larger than the work area.
             x = Math.Max(x, workArea.Left);
             y = Math.Max(y, workArea.Top);
 
             Location = new Point(x, y);
+        }
+
+        /// <summary>
+        /// When the dialog appears the foreground belongs to whichever app the user
+        /// was inspecting, so it can open inactive (taskbar flash, no keyboard focus).
+        /// Pull it to the foreground and focus the input field so the user can type
+        /// the query immediately — without leaving it permanently always-on-top.
+        /// </summary>
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+
+            // Briefly asserting TopMost reliably raises the window to the front and
+            // activates it even when another process owns the foreground; we drop it
+            // again immediately so the dialog is not always-on-top.
+            TopMost = true;
+            TopMost = false;
+
+            Activate();
+            NativeMethods.SetForegroundWindow(Handle);
+
+            _queryTextBox.Focus();
         }
 
         // =====================================================================
