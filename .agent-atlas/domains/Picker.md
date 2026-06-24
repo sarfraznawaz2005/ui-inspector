@@ -62,10 +62,10 @@
 - `Size` (line 146)
 - `AutoGrowTextBox` (line 176)
 - `CenterOnScreen` (line 216)
-- `OnTextBoxKeyDown` (line 257)
-- `ApplyPlaceholder` (line 275)
-- `BuildHeaderText` (line 316)
-- `LoadAppIcon` (line 326)
+- `OnTextBoxKeyDown` (line 252)
+- `ApplyPlaceholder` (line 270)
+- `BuildHeaderText` (line 311)
+- `LoadAppIcon` (line 321)
 
 
 ### `Picker/SpotPicker.cs`

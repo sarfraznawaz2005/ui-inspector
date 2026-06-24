@@ -640,7 +640,7 @@
     },
     {
       "file": "Picker/QueryDialog.cs",
-      "line": 316,
+      "line": 311,
       "symbol": "BuildHeaderText",
       "type": "function"
     },
@@ -990,7 +990,7 @@
     },
     {
       "file": "Picker/QueryDialog.cs",
-      "line": 275,
+      "line": 270,
       "symbol": "ApplyPlaceholder",
       "type": "function"
     }
@@ -1404,7 +1404,7 @@
     },
     {
       "file": "Picker/QueryDialog.cs",
-      "line": 257,
+      "line": 252,
       "symbol": "OnTextBoxKeyDown",
       "type": "function"
     },
@@ -1418,7 +1418,7 @@
   "key": [
     {
       "file": "Picker/QueryDialog.cs",
-      "line": 257,
+      "line": 252,
       "symbol": "OnTextBoxKeyDown",
       "type": "function"
     },
@@ -1432,7 +1432,7 @@
   "down": [
     {
       "file": "Picker/QueryDialog.cs",
-      "line": 257,
+      "line": 252,
       "symbol": "OnTextBoxKeyDown",
       "type": "function"
     },
@@ -1446,7 +1446,7 @@
   "load": [
     {
       "file": "Picker/QueryDialog.cs",
-      "line": 326,
+      "line": 321,
       "symbol": "LoadAppIcon",
       "type": "function"
     },
@@ -1466,7 +1466,7 @@
   "app": [
     {
       "file": "Picker/QueryDialog.cs",
-      "line": 326,
+      "line": 321,
       "symbol": "LoadAppIcon",
       "type": "function"
     },
@@ -1486,7 +1486,7 @@
   "icon": [
     {
       "file": "Picker/QueryDialog.cs",
-      "line": 326,
+      "line": 321,
       "symbol": "LoadAppIcon",
       "type": "function"
     },
@@ -2519,66 +2519,6 @@
       "type": "function"
     }
   ],
-  "size": [
-    {
-      "file": "Picker/QueryDialog.cs",
-      "line": 146,
-      "symbol": "Size",
-      "type": "function"
-    }
-  ],
-  "grow": [
-    {
-      "file": "Picker/QueryDialog.cs",
-      "line": 176,
-      "symbol": "AutoGrowTextBox",
-      "type": "function"
-    }
-  ],
-  "text": [
-    {
-      "file": "Picker/QueryDialog.cs",
-      "line": 176,
-      "symbol": "AutoGrowTextBox",
-      "type": "function"
-    },
-    {
-      "file": "Picker/QueryDialog.cs",
-      "line": 257,
-      "symbol": "OnTextBoxKeyDown",
-      "type": "function"
-    },
-    {
-      "file": "Picker/QueryDialog.cs",
-      "line": 316,
-      "symbol": "BuildHeaderText",
-      "type": "function"
-    }
-  ],
-  "center": [
-    {
-      "file": "Picker/QueryDialog.cs",
-      "line": 216,
-      "symbol": "CenterOnScreen",
-      "type": "function"
-    }
-  ],
-  "placeholder": [
-    {
-      "file": "Picker/QueryDialog.cs",
-      "line": 275,
-      "symbol": "ApplyPlaceholder",
-      "type": "function"
-    }
-  ],
-  "header": [
-    {
-      "file": "Picker/QueryDialog.cs",
-      "line": 316,
-      "symbol": "BuildHeaderText",
-      "type": "function"
-    }
-  ],
   "spot": [
     {
       "file": "Picker/SpotPicker.cs",
@@ -2792,6 +2732,66 @@
       "file": "Tray/TrayApplication.cs",
       "line": 785,
       "symbol": "OnTrayIconMouseClick",
+      "type": "function"
+    }
+  ],
+  "size": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 146,
+      "symbol": "Size",
+      "type": "function"
+    }
+  ],
+  "grow": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 176,
+      "symbol": "AutoGrowTextBox",
+      "type": "function"
+    }
+  ],
+  "text": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 176,
+      "symbol": "AutoGrowTextBox",
+      "type": "function"
+    },
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 252,
+      "symbol": "OnTextBoxKeyDown",
+      "type": "function"
+    },
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 311,
+      "symbol": "BuildHeaderText",
+      "type": "function"
+    }
+  ],
+  "center": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 216,
+      "symbol": "CenterOnScreen",
+      "type": "function"
+    }
+  ],
+  "placeholder": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 270,
+      "symbol": "ApplyPlaceholder",
+      "type": "function"
+    }
+  ],
+  "header": [
+    {
+      "file": "Picker/QueryDialog.cs",
+      "line": 311,
+      "symbol": "BuildHeaderText",
       "type": "function"
     }
   ]
